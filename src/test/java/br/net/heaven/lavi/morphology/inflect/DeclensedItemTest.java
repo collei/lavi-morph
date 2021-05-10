@@ -9,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 import br.net.heaven.lavi.morphology.core.Noun;
-import br.net.heaven.lavi.morphology.enums.NounCasesEnum;
-import br.net.heaven.lavi.morphology.enums.NounPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.NounPluralitiesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumNounCases;
+import br.net.heaven.lavi.morphology.enums.EnumNounPersons;
+import br.net.heaven.lavi.morphology.enums.EnumNounPluralities;
 
 public class DeclensedItemTest {
 	
@@ -20,7 +20,7 @@ public class DeclensedItemTest {
 		Noun noun = new Noun("apa");
 		//
 		try {
-			DeclensedItem item = new DeclensedItem(noun, NounCasesEnum.ACCUSATIVE, NounPluralitiesEnum.PLURAL);
+			DeclensedItem item = new DeclensedItem(noun, EnumNounCases.ACCUSATIVE, EnumNounPluralities.PLURAL);
 			assertNotNull(item);
 		} catch (Exception e) {
 			fail("Algum erro ao instanciar ConjugatedItem");
@@ -32,7 +32,7 @@ public class DeclensedItemTest {
 		Noun noun = new Noun("apa");
 		//
 		try {
-			DeclensedItem item = new DeclensedItem(noun, NounPersonsEnum.THEY, NounPluralitiesEnum.PLURAL);
+			DeclensedItem item = new DeclensedItem(noun, EnumNounPersons.THEY, EnumNounPluralities.PLURAL);
 			assertNotNull(item);
 		} catch (Exception e) {
 			fail("Algum erro ao instanciar ConjugatedItem");
@@ -42,7 +42,7 @@ public class DeclensedItemTest {
 	@Test
 	public void testClone() {
 		Noun noun = new Noun("apa");
-		DeclensedItem item = new DeclensedItem(noun, NounPersonsEnum.THEY, NounPluralitiesEnum.PLURAL);
+		DeclensedItem item = new DeclensedItem(noun, EnumNounPersons.THEY, EnumNounPluralities.PLURAL);
 		assertEquals(item.getPerson(), item.clone().getPerson());
 		assertEquals(item.getPlurality(), item.clone().getPlurality());
 		assertTrue(item.getNoun().get().equals(item.clone().getNoun().get()));
@@ -51,31 +51,31 @@ public class DeclensedItemTest {
 	@Test
 	public void testGetCase() {
 		Noun noun = new Noun("apa");
-		DeclensedItem item = new DeclensedItem(noun, NounCasesEnum.ACCUSATIVE, NounPluralitiesEnum.PLURAL);
+		DeclensedItem item = new DeclensedItem(noun, EnumNounCases.ACCUSATIVE, EnumNounPluralities.PLURAL);
 		//
-		assertEquals(NounCasesEnum.ACCUSATIVE, item.getCase());
+		assertEquals(EnumNounCases.ACCUSATIVE, item.getCase());
 	}
 	
 	@Test
 	public void testGetPerson() {
 		Noun noun = new Noun("apa");
-		DeclensedItem item = new DeclensedItem(noun, NounPersonsEnum.HE_SHE_IT, NounPluralitiesEnum.PLURAL);
+		DeclensedItem item = new DeclensedItem(noun, EnumNounPersons.HE_SHE_IT, EnumNounPluralities.PLURAL);
 		//
-		assertEquals(NounPersonsEnum.HE_SHE_IT, item.getPerson());
+		assertEquals(EnumNounPersons.HE_SHE_IT, item.getPerson());
 	}
 	
 	@Test
 	public void testGetPlurality() {
 		Noun noun = new Noun("apa");
-		DeclensedItem item = new DeclensedItem(noun, NounCasesEnum.ACCUSATIVE, NounPluralitiesEnum.DUAL);
+		DeclensedItem item = new DeclensedItem(noun, EnumNounCases.ACCUSATIVE, EnumNounPluralities.DUAL);
 		//
-		assertEquals(NounPluralitiesEnum.DUAL, item.getPlurality());
+		assertEquals(EnumNounPluralities.DUAL, item.getPlurality());
 	}
 	
 	@Test
 	public void testGetNoun() {
 		Noun noun = new Noun("apa");
-		DeclensedItem item = new DeclensedItem(noun, NounCasesEnum.ACCUSATIVE, NounPluralitiesEnum.PLURAL);
+		DeclensedItem item = new DeclensedItem(noun, EnumNounCases.ACCUSATIVE, EnumNounPluralities.PLURAL);
 		//
 		assertTrue("apa".equals(item.getNoun().get()));
 	}
@@ -83,7 +83,7 @@ public class DeclensedItemTest {
 	@Test
 	public void testGetDeclensed() {
 		Noun noun = new Noun("apa");
-		DeclensedItem item = new DeclensedItem(noun, NounCasesEnum.ACCUSATIVE, NounPluralitiesEnum.PLURAL);
+		DeclensedItem item = new DeclensedItem(noun, EnumNounCases.ACCUSATIVE, EnumNounPluralities.PLURAL);
 		//
 		assertTrue("apatok".equals(item.getDeclensed().get()));
 	}
@@ -91,9 +91,9 @@ public class DeclensedItemTest {
 	@Test
 	public void testMatches() {
 		Noun noun = new Noun("apa");
-		DeclensedItem item = new DeclensedItem(noun, NounCasesEnum.ACCUSATIVE, NounPluralitiesEnum.PLURAL);
-		assertTrue(item.matches(NounCasesEnum.ACCUSATIVE, NounPluralitiesEnum.PLURAL));
-		assertFalse(item.matches(NounCasesEnum.DATIVE, NounPluralitiesEnum.PLURAL));
+		DeclensedItem item = new DeclensedItem(noun, EnumNounCases.ACCUSATIVE, EnumNounPluralities.PLURAL);
+		assertTrue(item.matches(EnumNounCases.ACCUSATIVE, EnumNounPluralities.PLURAL));
+		assertFalse(item.matches(EnumNounCases.DATIVE, EnumNounPluralities.PLURAL));
 	}
 	
 }

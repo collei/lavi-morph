@@ -2,24 +2,24 @@ package br.net.heaven.lavi.morphology.test.helpers;
 
 import br.net.heaven.lavi.morphology.core.Term;
 import br.net.heaven.lavi.morphology.core.Verb;
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbModesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbModes;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 
 public class VerbTestItem {
 	
 	private Verb verb;
 	private Term conjugated;
-	private VerbPersonsEnum person; 
-	private VerbTensesEnum tense; 
-	private VerbVoicesEnum voice; 
-	private VerbModesEnum mode; 
-	private VerbDefinitenessEnum definiteness;
+	private EnumVerbPersons person; 
+	private EnumVerbTenses tense; 
+	private EnumVerbVoices voice; 
+	private EnumVerbModes mode; 
+	private EnumVerbDefiniteness definiteness;
 	
-	public VerbTestItem(Verb verb, Term conjugated, VerbPersonsEnum person, VerbTensesEnum tense, VerbVoicesEnum voice,
-			VerbModesEnum mode, VerbDefinitenessEnum definiteness) {
+	public VerbTestItem(Verb verb, Term conjugated, EnumVerbPersons person, EnumVerbTenses tense, EnumVerbVoices voice,
+			EnumVerbModes mode, EnumVerbDefiniteness definiteness) {
 		this.verb = verb;
 		this.conjugated = conjugated;
 		this.person = person;

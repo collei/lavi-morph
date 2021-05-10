@@ -5,19 +5,19 @@ import java.util.List;
 
 import br.net.heaven.lavi.morphology.core.Term;
 import br.net.heaven.lavi.morphology.core.Verb;
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbModesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbModes;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 import br.net.heaven.lavi.morphology.enums.filter.VerbConjugationFilter;
 
 public class ConjugationTable {
 	
-	private VerbTensesEnum tense; 
-	private VerbVoicesEnum voice; 
-	private VerbModesEnum mode; 
-	private VerbDefinitenessEnum definiteness;
+	private EnumVerbTenses tense; 
+	private EnumVerbVoices voice; 
+	private EnumVerbModes mode; 
+	private EnumVerbDefiniteness definiteness;
 
 	private Verb verb;
 	private List<ConjugatedItem> units;
@@ -29,35 +29,35 @@ public class ConjugationTable {
 		//
 		this.verb = verb;
 		this.units = new ArrayList<ConjugatedItem>();
-		this.tense = VerbTensesEnum.IMPERFECT;
-		this.voice = VerbVoicesEnum.ACTIVE;
-		this.mode = VerbModesEnum.FACTUAL;
-		this.definiteness = VerbDefinitenessEnum.INDEFINITE;
+		this.tense = EnumVerbTenses.IMPERFECT;
+		this.voice = EnumVerbVoices.ACTIVE;
+		this.mode = EnumVerbModes.FACTUAL;
+		this.definiteness = EnumVerbDefiniteness.INDEFINITE;
 	}
 	
 	/////*/////
 
-	public ConjugationTable setTense(VerbTensesEnum tense) {
+	public ConjugationTable setTense(EnumVerbTenses tense) {
 		this.tense = tense;
 		return this;
 	}
 
-	public ConjugationTable setVoice(VerbVoicesEnum voice) {
+	public ConjugationTable setVoice(EnumVerbVoices voice) {
 		this.voice = voice;
 		return this;
 	}
 
-	public ConjugationTable setMode(VerbModesEnum mode) {
+	public ConjugationTable setMode(EnumVerbModes mode) {
 		this.mode = mode;
 		return this;
 	}
 
-	public ConjugationTable setDefiniteness(VerbDefinitenessEnum definiteness) {
+	public ConjugationTable setDefiniteness(EnumVerbDefiniteness definiteness) {
 		this.definiteness = definiteness;
 		return this;
 	}
 	
-	public ConjugationTable add(VerbPersonsEnum person) {
+	public ConjugationTable add(EnumVerbPersons person) {
 		this.units.add(new ConjugatedItem(
 				this.verb,
 				person,

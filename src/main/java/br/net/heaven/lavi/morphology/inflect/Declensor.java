@@ -1,25 +1,25 @@
 package br.net.heaven.lavi.morphology.inflect;
 
 import br.net.heaven.lavi.morphology.core.Term;
-import br.net.heaven.lavi.morphology.enums.HarmonyEnum;
-import br.net.heaven.lavi.morphology.enums.NounCasesEnum;
-import br.net.heaven.lavi.morphology.enums.NounPluralitiesEnum;
-import br.net.heaven.lavi.morphology.enums.NounPersonsEnum;
+import br.net.heaven.lavi.morphology.enums.EnumHarmony;
+import br.net.heaven.lavi.morphology.enums.EnumNounCases;
+import br.net.heaven.lavi.morphology.enums.EnumNounPluralities;
+import br.net.heaven.lavi.morphology.enums.EnumNounPersons;
 
 public class Declensor {
 
-	public static String makeDeclension(Term term, NounPersonsEnum person, NounCasesEnum nounCase, NounPluralitiesEnum plurality) {
+	public static String makeDeclension(Term term, EnumNounPersons person, EnumNounCases nounCase, EnumNounPluralities plurality) {
 		String possessive = makePossessive(term, person, plurality);
 		Term possesiveTerm = new Term(possessive);
-		Term possessiveDeclensed = new Term(makeDeclension(possesiveTerm, nounCase, NounPluralitiesEnum.SINGULAR));
+		Term possessiveDeclensed = new Term(makeDeclension(possesiveTerm, nounCase, EnumNounPluralities.SINGULAR));
 		return possessiveDeclensed.get();
 	}
 	
-	public static String makeDeclension(Term term, NounCasesEnum nounCase, NounPluralitiesEnum plurality) {
+	public static String makeDeclension(Term term, EnumNounCases nounCase, EnumNounPluralities plurality) {
 		String affix = "";
 		//
-		if (plurality == NounPluralitiesEnum.SINGULAR) {
-			if (term.getHarmony() == HarmonyEnum.BACK) {
+		if (plurality == EnumNounPluralities.SINGULAR) {
+			if (term.getHarmony() == EnumHarmony.BACK) {
 				if (term.isVocalic()) {
 					affix = chooseCase(nounCase, "", "t", "n", "nak", "kar", "ni", "ve", "no", "le", "to");
 				} else if (term.endsWith("r","s","š","n","t")) {
@@ -36,14 +36,14 @@ public class Declensor {
 					affix = chooseCase(nounCase, "", "et", "en", "nek", "ker", "ni", "ve", "no", "le", "to");
 				}
 			}
-		} else if (plurality == NounPluralitiesEnum.DUAL) {
-			if (term.getHarmony() == HarmonyEnum.BACK) {
+		} else if (plurality == EnumNounPluralities.DUAL) {
+			if (term.getHarmony() == EnumHarmony.BACK) {
 				affix = chooseCase(nounCase, "lar", "lart", "laren", "larnak", "larkar", "larni", "larve", "larno", "larle", "larto");
 			} else {
 				affix = chooseCase(nounCase, "ler", "lert", "leren", "lernek", "lerker", "lerni", "lerve", "lerno", "lerle", "lerto");
 			}
-		} else if (plurality == NounPluralitiesEnum.PLURAL) {
-			if (term.getHarmony() == HarmonyEnum.BACK) {
+		} else if (plurality == EnumNounPluralities.PLURAL) {
+			if (term.getHarmony() == EnumHarmony.BACK) {
 				if (term.isVocalic()) {
 					affix = chooseCase(nounCase, "k", "tok", "nim", "nakim", "karim", "kni", "kve", "kno", "kle", "kto");
 				} else {
@@ -61,11 +61,11 @@ public class Declensor {
 		return term.get() + affix;
 	}
 	
-	public static String makePossessive(Term term, NounPersonsEnum person, NounPluralitiesEnum plurality) {
+	public static String makePossessive(Term term, EnumNounPersons person, EnumNounPluralities plurality) {
 		String affix = "";
 		//
-		if (plurality == NounPluralitiesEnum.SINGULAR) {
-			if (term.getHarmony() == HarmonyEnum.BACK) {
+		if (plurality == EnumNounPluralities.SINGULAR) {
+			if (term.getHarmony() == EnumHarmony.BACK) {
 				if (term.isVocalic()) {
 					affix = choosePerson(person, "m", "d", "j", "nu", "tok", "juk");
 				} else {
@@ -78,14 +78,14 @@ public class Declensor {
 					affix = choosePerson(person, "em", "ed", "je", "enu", "itek", "juk");
 				}
 			}
-		} else if (plurality == NounPluralitiesEnum.DUAL) {
-			if (term.getHarmony() == HarmonyEnum.BACK) {
+		} else if (plurality == EnumNounPluralities.DUAL) {
+			if (term.getHarmony() == EnumHarmony.BACK) {
 				affix = choosePerson(person, "laram", "larad", "larja", "laranu", "lartok", "larjuk");
 			} else {
 				affix = choosePerson(person, "lerem", "lered", "lerje", "lerenu", "lertek", "lerjuk");
 			}
-		} else if (plurality == NounPluralitiesEnum.PLURAL) {
-			if (term.getHarmony() == HarmonyEnum.BACK) {
+		} else if (plurality == EnumNounPluralities.PLURAL) {
+			if (term.getHarmony() == EnumHarmony.BACK) {
 				if (term.isVocalic()) {
 					affix = choosePerson(person, "im", "id", "ij", "inu", "itok", "ijuk");
 				} else {
@@ -105,7 +105,7 @@ public class Declensor {
 
 	/*** for internal use only ***/
 	
-	private static String choosePerson(NounPersonsEnum person, String i, String you, String heSheIt, String we, String youPlural, String they) {
+	private static String choosePerson(EnumNounPersons person, String i, String you, String heSheIt, String we, String youPlural, String they) {
 		switch (person) {
 		case I:
 			return i;
@@ -124,7 +124,7 @@ public class Declensor {
 		}
 	}
 	
-	private static String chooseCase(NounCasesEnum nounCase, String nominative, String accusative, String genitive, String dative, String ablative, String locative, String instrumental, String partitive, String abessive, String comitative) {
+	private static String chooseCase(EnumNounCases nounCase, String nominative, String accusative, String genitive, String dative, String ablative, String locative, String instrumental, String partitive, String abessive, String comitative) {
 		switch (nounCase) {
 			case ACCUSATIVE:
 				return accusative;

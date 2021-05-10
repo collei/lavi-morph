@@ -2,25 +2,25 @@ package br.net.heaven.lavi.morphology.inflect;
 
 import br.net.heaven.lavi.morphology.core.Term;
 import br.net.heaven.lavi.morphology.core.Verb;
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbModesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbModes;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 import br.net.heaven.lavi.morphology.enums.filter.VerbConjugationFilter;
 
 public class ConjugatedItem {
 
 	private Verb verb;
 	private Term conjugated;
-	private VerbPersonsEnum person; 
-	private VerbTensesEnum tense; 
-	private VerbVoicesEnum voice; 
-	private VerbModesEnum mode; 
-	private VerbDefinitenessEnum definiteness;
+	private EnumVerbPersons person; 
+	private EnumVerbTenses tense; 
+	private EnumVerbVoices voice; 
+	private EnumVerbModes mode; 
+	private EnumVerbDefiniteness definiteness;
 	
-	public ConjugatedItem(Verb verb, VerbPersonsEnum person, VerbTensesEnum tense, VerbVoicesEnum voice,
-			VerbModesEnum mode, VerbDefinitenessEnum definiteness) {
+	public ConjugatedItem(Verb verb, EnumVerbPersons person, EnumVerbTenses tense, EnumVerbVoices voice,
+			EnumVerbModes mode, EnumVerbDefiniteness definiteness) {
 		this.verb = verb;
 		this.person = person;
 		this.tense = tense;
@@ -38,23 +38,23 @@ public class ConjugatedItem {
 		return this.conjugated;
 	}
 
-	public VerbPersonsEnum getPerson() {
+	public EnumVerbPersons getPerson() {
 		return person;
 	}
 
-	public VerbTensesEnum getTense() {
+	public EnumVerbTenses getTense() {
 		return tense;
 	}
 
-	public VerbVoicesEnum getVoice() {
+	public EnumVerbVoices getVoice() {
 		return voice;
 	}
 
-	public VerbModesEnum getMode() {
+	public EnumVerbModes getMode() {
 		return mode;
 	}
 
-	public VerbDefinitenessEnum getDefiniteness() {
+	public EnumVerbDefiniteness getDefiniteness() {
 		return definiteness;
 	}
 	

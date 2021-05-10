@@ -1,11 +1,12 @@
 package br.net.heaven.lavi.morphology.core;
 
-import br.net.heaven.lavi.morphology.enums.HarmonyEnum;
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbModesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumHarmony;
+import br.net.heaven.lavi.morphology.enums.EnumPartsOfSpeech;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbModes;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 import br.net.heaven.lavi.morphology.inflect.Conjugator;
 
 public class Verb {
@@ -32,7 +33,7 @@ public class Verb {
 		return this.stem.get();
 	}
 	
-	public HarmonyEnum getHarmony() {
+	public EnumHarmony getHarmony() {
 		return this.stem.getHarmony();
 	}
 	
@@ -40,18 +41,18 @@ public class Verb {
 		return this.stem.isVocalic();
 	}
 	
-	public Term conjugate(VerbModesEnum mode, VerbPersonsEnum person, VerbTensesEnum tense, VerbVoicesEnum voice, VerbDefinitenessEnum definiteness) {
+	public Term conjugate(EnumVerbModes mode, EnumVerbPersons person, EnumVerbTenses tense, EnumVerbVoices voice, EnumVerbDefiniteness definiteness) {
 		String conjugated;
 		//
-		if (mode == VerbModesEnum.DESIDERATIVE) {
+		if (mode == EnumVerbModes.DESIDERATIVE) {
 			conjugated = Conjugator.doDesiderative(this, person, tense, voice, definiteness);
-		} else if (mode == VerbModesEnum.IMPERATIVE) {
+		} else if (mode == EnumVerbModes.IMPERATIVE) {
 			conjugated = Conjugator.doImperative(this, person, definiteness);
 		} else {
 			conjugated = Conjugator.doFactual(this, person, tense, voice, definiteness);
 		}
 		//
-		return new Term(conjugated);
+		return new Term(conjugated, EnumPartsOfSpeech.VERB);
 	}
 
 	public boolean equals(Verb verb) {

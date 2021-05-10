@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 import br.net.heaven.lavi.morphology.core.Verb;
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbModesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbModes;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 
 public class ConjugatedItemTest {
 
@@ -21,11 +21,11 @@ public class ConjugatedItemTest {
 	public void testConstructor() {
 		Verb verb = new Verb("eda");
 		try {
-			ConjugatedItem item = new ConjugatedItem(verb, VerbPersonsEnum.WE,
-					VerbTensesEnum.PERFECT,
-					VerbVoicesEnum.PASSIVE,
-					VerbModesEnum.DESIDERATIVE,
-					VerbDefinitenessEnum.DEFINITE);
+			ConjugatedItem item = new ConjugatedItem(verb, EnumVerbPersons.WE,
+					EnumVerbTenses.PERFECT,
+					EnumVerbVoices.PASSIVE,
+					EnumVerbModes.DESIDERATIVE,
+					EnumVerbDefiniteness.DEFINITE);
 			assertNotNull(item);
 		} catch (Exception e) {
 			fail("Algum erro ao instanciar ConjugatedItem");
@@ -33,11 +33,11 @@ public class ConjugatedItemTest {
 	}
 
 	private ConjugatedItem makeConjugatedItemOf(String verb) {
-		return new ConjugatedItem(new Verb(verb), VerbPersonsEnum.WE,
-				VerbTensesEnum.PERFECT,
-				VerbVoicesEnum.PASSIVE,
-				VerbModesEnum.DESIDERATIVE,
-				VerbDefinitenessEnum.DEFINITE);
+		return new ConjugatedItem(new Verb(verb), EnumVerbPersons.WE,
+				EnumVerbTenses.PERFECT,
+				EnumVerbVoices.PASSIVE,
+				EnumVerbModes.DESIDERATIVE,
+				EnumVerbDefiniteness.DEFINITE);
 	}
 	
 	@Test
@@ -49,31 +49,31 @@ public class ConjugatedItemTest {
 	@Test
 	public void testGetDefiniteness() {
 		ConjugatedItem item = this.makeConjugatedItemOf("eda");
-		assertEquals(VerbDefinitenessEnum.DEFINITE, item.getDefiniteness());
+		assertEquals(EnumVerbDefiniteness.DEFINITE, item.getDefiniteness());
 	}
 	
 	@Test
 	public void testGetMode() {
 		ConjugatedItem item = this.makeConjugatedItemOf("eda");
-		assertEquals(VerbModesEnum.DESIDERATIVE, item.getMode());
+		assertEquals(EnumVerbModes.DESIDERATIVE, item.getMode());
 	}
 	
 	@Test
 	public void testGetPerson() {
 		ConjugatedItem item = this.makeConjugatedItemOf("eda");
-		assertEquals(VerbPersonsEnum.WE, item.getPerson());
+		assertEquals(EnumVerbPersons.WE, item.getPerson());
 	}
 	
 	@Test
 	public void testGetTense() {
 		ConjugatedItem item = this.makeConjugatedItemOf("eda");
-		assertEquals(VerbTensesEnum.PERFECT, item.getTense());
+		assertEquals(EnumVerbTenses.PERFECT, item.getTense());
 	}
 	
 	@Test
 	public void testGetVoice() {
 		ConjugatedItem item = this.makeConjugatedItemOf("eda");
-		assertEquals(VerbVoicesEnum.PASSIVE, item.getVoice());
+		assertEquals(EnumVerbVoices.PASSIVE, item.getVoice());
 	}
 	
 	@Test
@@ -85,8 +85,8 @@ public class ConjugatedItemTest {
 	@Test
 	public void testMatches() {
 		ConjugatedItem item = this.makeConjugatedItemOf("eda");
-		assertTrue(item.matches(VerbVoicesEnum.PASSIVE, VerbModesEnum.DESIDERATIVE));
-		assertFalse(item.matches(VerbVoicesEnum.PASSIVE, VerbModesEnum.FACTUAL));
+		assertTrue(item.matches(EnumVerbVoices.PASSIVE, EnumVerbModes.DESIDERATIVE));
+		assertFalse(item.matches(EnumVerbVoices.PASSIVE, EnumVerbModes.FACTUAL));
 	}
 
 }

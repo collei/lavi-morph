@@ -2,23 +2,23 @@ package br.net.heaven.lavi.morphology.inflect;
 
 import br.net.heaven.lavi.morphology.core.Term;
 import br.net.heaven.lavi.morphology.core.Verb;
-import br.net.heaven.lavi.morphology.enums.HarmonyEnum;
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumHarmony;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 
 public class Conjugator {
 	
-	public static String doFactual(Verb verb, VerbPersonsEnum person, VerbTensesEnum tense, VerbVoicesEnum voice, VerbDefinitenessEnum definiteness) {
+	public static String doFactual(Verb verb, EnumVerbPersons person, EnumVerbTenses tense, EnumVerbVoices voice, EnumVerbDefiniteness definiteness) {
 		String suffix = "";
 		Term conjugated = new Term(verb.getStem());
-		HarmonyEnum harmony = verb.getHarmony();
+		EnumHarmony harmony = verb.getHarmony();
 		boolean vocalic = verb.isVocalic();
 		//
-		if (tense == VerbTensesEnum.PERFECT) {
-			if (definiteness == VerbDefinitenessEnum.DEFINITE) {
-				if (harmony == HarmonyEnum.BACK) {
+		if (tense == EnumVerbTenses.PERFECT) {
+			if (definiteness == EnumVerbDefiniteness.DEFINITE) {
+				if (harmony == EnumHarmony.BACK) {
 					suffix = Conjugator.choosePerson(person, "tom", "tod", "tja", "tonu", "totok", "tjuk");
 				} else {
 					suffix = Conjugator.choosePerson(person, "tem", "ted", "tje", "tenu", "titek", "tjuk");
@@ -27,8 +27,8 @@ public class Conjugator {
 				suffix = Conjugator.choosePerson(person, "tu", "tiš", "te", "time", "tite", "tech");
 			}
 		} else {
-			if (definiteness == VerbDefinitenessEnum.DEFINITE) {
-				if (harmony == HarmonyEnum.BACK) {
+			if (definiteness == EnumVerbDefiniteness.DEFINITE) {
+				if (harmony == EnumHarmony.BACK) {
 					suffix = Conjugator.choosePerson(person, "jom", "jod", "ja", "jonu", "jotok", "juk");
 				} else {
 					suffix = Conjugator.choosePerson(person, "jem", "jed", "je", "jenu", "jitek", "juk");
@@ -48,19 +48,19 @@ public class Conjugator {
 		return conjugated.get();
 	}
 	
-	public static String doDesiderative(Verb verb, VerbPersonsEnum person, VerbTensesEnum tense, VerbVoicesEnum voice, VerbDefinitenessEnum definiteness) {
+	public static String doDesiderative(Verb verb, EnumVerbPersons person, EnumVerbTenses tense, EnumVerbVoices voice, EnumVerbDefiniteness definiteness) {
 		String partial = Conjugator.doFactual(verb, person, tense, voice, definiteness);
 		return "na " + partial;
 	}
 	
-	public static String doImperative(Verb verb, VerbPersonsEnum person, VerbDefinitenessEnum definiteness) {
+	public static String doImperative(Verb verb, EnumVerbPersons person, EnumVerbDefiniteness definiteness) {
 		String suffix = "";
 		Term conjugated = new Term(verb.getStem());
-		HarmonyEnum harmony = verb.getHarmony();
+		EnumHarmony harmony = verb.getHarmony();
 		boolean vocalic = verb.isVocalic();
 		//
-		if (definiteness == VerbDefinitenessEnum.DEFINITE) {
-			if (harmony == HarmonyEnum.BACK) {
+		if (definiteness == EnumVerbDefiniteness.DEFINITE) {
+			if (harmony == EnumHarmony.BACK) {
 				if (vocalic) {
 					suffix = Conjugator.choosePerson(person, "chod", "chonu", "chtok");
 				} else {
@@ -89,7 +89,7 @@ public class Conjugator {
 	
 	/// for internal use
 	
-	private static String choosePerson(VerbPersonsEnum person, String i, String you, String heSheIt, String we, String youPlural, String they) {
+	private static String choosePerson(EnumVerbPersons person, String i, String you, String heSheIt, String we, String youPlural, String they) {
 		switch (person) {
 			case I:
 				return i;
@@ -102,7 +102,7 @@ public class Conjugator {
 		}
 	}
 	
-	private static String choosePerson(VerbPersonsEnum person, String you, String we, String youPlural) {
+	private static String choosePerson(EnumVerbPersons person, String you, String we, String youPlural) {
 		switch (person) {
 			case YOU:
 				return you;
@@ -115,18 +115,18 @@ public class Conjugator {
 		}
 	}
 	
-	private static String generateVoiceAffix(Term conjugatedVerb, VerbVoicesEnum voice) {
+	private static String generateVoiceAffix(Term conjugatedVerb, EnumVerbVoices voice) {
 		boolean vocalic = conjugatedVerb.isVocalic();
-		HarmonyEnum harmony = conjugatedVerb.getHarmony();
+		EnumHarmony harmony = conjugatedVerb.getHarmony();
 		//
-		if (voice == VerbVoicesEnum.PASSIVE) {
+		if (voice == EnumVerbVoices.PASSIVE) {
 			if (vocalic) {
 				return "ri";
 			} else {
 				return "i";
 			}
-		} else if (voice == VerbVoicesEnum.MEDIAL) {
-			if (harmony == HarmonyEnum.BACK) {
+		} else if (voice == EnumVerbVoices.MEDIAL) {
+			if (harmony == EnumHarmony.BACK) {
 				if (vocalic) {
 					return "ror";
 				} else {

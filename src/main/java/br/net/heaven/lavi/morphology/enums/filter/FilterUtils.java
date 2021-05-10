@@ -3,11 +3,11 @@ package br.net.heaven.lavi.morphology.enums.filter;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbModesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbModes;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 
 public class FilterUtils {
 	
@@ -16,19 +16,19 @@ public class FilterUtils {
 	private static void initFilters() {
 		if (savedFilters == null) {
 			savedFilters = new ArrayList<VerbConjugationFilter>();
-			for (VerbConjugationFilter filter : VerbPersonsEnum.asList()) {
+			for (VerbConjugationFilter filter : EnumVerbPersons.asList()) {
 				savedFilters.add(filter);
 			}
-			for (VerbConjugationFilter filter : VerbTensesEnum.asList()) {
+			for (VerbConjugationFilter filter : EnumVerbTenses.asList()) {
 				savedFilters.add(filter);
 			}
-			for (VerbConjugationFilter filter : VerbModesEnum.asList()) {
+			for (VerbConjugationFilter filter : EnumVerbModes.asList()) {
 				savedFilters.add(filter);
 			}
-			for (VerbConjugationFilter filter : VerbVoicesEnum.asList()) {
+			for (VerbConjugationFilter filter : EnumVerbVoices.asList()) {
 				savedFilters.add(filter);
 			}
-			for (VerbConjugationFilter filter : VerbDefinitenessEnum.asList()) {
+			for (VerbConjugationFilter filter : EnumVerbDefiniteness.asList()) {
 				savedFilters.add(filter);
 			}
 		}

@@ -5,18 +5,18 @@ import java.util.List;
 
 import br.net.heaven.lavi.morphology.core.Term;
 import br.net.heaven.lavi.morphology.core.Verb;
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbModesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbModes;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 
 public class VerbTestList {
 	
-	private VerbTensesEnum tense; 
-	private VerbVoicesEnum voice; 
-	private VerbModesEnum mode; 
-	private VerbDefinitenessEnum definiteness;
+	private EnumVerbTenses tense; 
+	private EnumVerbVoices voice; 
+	private EnumVerbModes mode; 
+	private EnumVerbDefiniteness definiteness;
 
 	private Verb verb;
 	private List<VerbTestItem> units;
@@ -32,27 +32,27 @@ public class VerbTestList {
 	
 	/////*/////
 
-	public VerbTestList setTense(VerbTensesEnum tense) {
+	public VerbTestList setTense(EnumVerbTenses tense) {
 		this.tense = tense;
 		return this;
 	}
 
-	public VerbTestList setVoice(VerbVoicesEnum voice) {
+	public VerbTestList setVoice(EnumVerbVoices voice) {
 		this.voice = voice;
 		return this;
 	}
 
-	public VerbTestList setMode(VerbModesEnum mode) {
+	public VerbTestList setMode(EnumVerbModes mode) {
 		this.mode = mode;
 		return this;
 	}
 
-	public VerbTestList setDefiniteness(VerbDefinitenessEnum definiteness) {
+	public VerbTestList setDefiniteness(EnumVerbDefiniteness definiteness) {
 		this.definiteness = definiteness;
 		return this;
 	}
 	
-	public VerbTestList add(String conjugatedForm, VerbPersonsEnum person) {
+	public VerbTestList add(String conjugatedForm, EnumVerbPersons person) {
 		this.units.add(new VerbTestItem(
 				this.verb,
 				new Term(conjugatedForm),

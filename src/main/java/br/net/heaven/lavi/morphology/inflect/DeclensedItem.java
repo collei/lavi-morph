@@ -2,32 +2,32 @@ package br.net.heaven.lavi.morphology.inflect;
 
 import br.net.heaven.lavi.morphology.core.Noun;
 import br.net.heaven.lavi.morphology.core.Term;
-import br.net.heaven.lavi.morphology.enums.NounCasesEnum;
-import br.net.heaven.lavi.morphology.enums.NounPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.NounPluralitiesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumNounCases;
+import br.net.heaven.lavi.morphology.enums.EnumNounPersons;
+import br.net.heaven.lavi.morphology.enums.EnumNounPluralities;
 import br.net.heaven.lavi.morphology.enums.filter.NounDeclensionFilter;
 
 public class DeclensedItem {
 
 	private Noun noun;
 	private Noun declensed;
-	private NounPersonsEnum person; 
-	private NounPluralitiesEnum plurality; 
-	private NounCasesEnum nounCase; 
+	private EnumNounPersons person; 
+	private EnumNounPluralities plurality; 
+	private EnumNounCases nounCase; 
 	
-	public DeclensedItem(Noun noun, NounCasesEnum nounCase, NounPluralitiesEnum plurality) {
+	public DeclensedItem(Noun noun, EnumNounCases nounCase, EnumNounPluralities plurality) {
 		this.noun = noun;
-		this.person = NounPersonsEnum.NEUTRAL;
+		this.person = EnumNounPersons.NEUTRAL;
 		this.plurality = plurality;
 		this.nounCase = nounCase;
 		this.declensed = this.noun.makeDeclension(nounCase, plurality);
 	}
 
-	public DeclensedItem(Noun noun, NounPersonsEnum person, NounPluralitiesEnum plurality) {
+	public DeclensedItem(Noun noun, EnumNounPersons person, EnumNounPluralities plurality) {
 		this.noun = noun;
 		this.person = person;
 		this.plurality = plurality;
-		this.nounCase = NounCasesEnum.NOMINATIVE;
+		this.nounCase = EnumNounCases.NOMINATIVE;
 		this.declensed = this.noun.makePossessive(person, plurality);
 	}
 
@@ -39,15 +39,15 @@ public class DeclensedItem {
 		return this.declensed;
 	}
 
-	public NounPersonsEnum getPerson() {
+	public EnumNounPersons getPerson() {
 		return person;
 	}
 
-	public NounCasesEnum getCase() {
+	public EnumNounCases getCase() {
 		return nounCase;
 	}
 
-	public NounPluralitiesEnum getPlurality() {
+	public EnumNounPluralities getPlurality() {
 		return plurality;
 	}
 	
@@ -61,7 +61,7 @@ public class DeclensedItem {
 	
 	@Override
 	public DeclensedItem clone() {
-		if (person == NounPersonsEnum.NEUTRAL) {
+		if (person == EnumNounPersons.NEUTRAL) {
 			return new DeclensedItem(noun, nounCase, plurality);
 		} else {
 			return new DeclensedItem(noun, person, plurality);

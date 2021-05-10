@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test;
 
 import br.net.heaven.lavi.morphology.core.Term;
 import br.net.heaven.lavi.morphology.core.Verb;
-import br.net.heaven.lavi.morphology.enums.VerbDefinitenessEnum;
-import br.net.heaven.lavi.morphology.enums.VerbModesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.VerbTensesEnum;
-import br.net.heaven.lavi.morphology.enums.VerbVoicesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.net.heaven.lavi.morphology.enums.EnumVerbModes;
+import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
+import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
+import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 import br.net.heaven.lavi.morphology.enums.filter.VerbConjugationFilter;
 
 public class ConjugationTableTest {
@@ -22,7 +22,7 @@ public class ConjugationTableTest {
 	@Test
 	public void testConstructor() {
 		ConjugationTable table = new ConjugationTable(new Verb("eda"))
-			.add(VerbPersonsEnum.I);
+			.add(EnumVerbPersons.I);
 		
 		Term term = table.asList().get(0);
 		
@@ -32,7 +32,7 @@ public class ConjugationTableTest {
 	@Test
 	public void testAdd() {
 		ConjugationTable table = new ConjugationTable(new Verb("eda"))
-			.add(VerbPersonsEnum.YOU_PLURAL);
+			.add(EnumVerbPersons.YOU_PLURAL);
 		
 		Term term = table.asList().get(0);
 		
@@ -42,13 +42,13 @@ public class ConjugationTableTest {
 	@Test
 	public void testAsFiltered() {
 		ConjugationTable table = new ConjugationTable(new Verb("eda"))
-			.add(VerbPersonsEnum.YOU)
-			.add(VerbPersonsEnum.I)
-			.setTense(VerbTensesEnum.PERFECT)
-			.add(VerbPersonsEnum.YOU)
-			.add(VerbPersonsEnum.YOU_PLURAL);
+			.add(EnumVerbPersons.YOU)
+			.add(EnumVerbPersons.I)
+			.setTense(EnumVerbTenses.PERFECT)
+			.add(EnumVerbPersons.YOU)
+			.add(EnumVerbPersons.YOU_PLURAL);
 		
-		Term term = table.asFiltered(VerbTensesEnum.PERFECT, VerbPersonsEnum.YOU).get(0);
+		Term term = table.asFiltered(EnumVerbTenses.PERFECT, EnumVerbPersons.YOU).get(0);
 		
 		assertEquals("etiš", term.get());
 	}
@@ -56,45 +56,45 @@ public class ConjugationTableTest {
 	@Test
 	public void testAsItemsFiltered() {
 		ConjugationTable table = new ConjugationTable(new Verb("eda"))
-			.add(VerbPersonsEnum.YOU)
-			.add(VerbPersonsEnum.I)
-			.setTense(VerbTensesEnum.PERFECT)
-			.add(VerbPersonsEnum.YOU)
-			.add(VerbPersonsEnum.YOU_PLURAL);
+			.add(EnumVerbPersons.YOU)
+			.add(EnumVerbPersons.I)
+			.setTense(EnumVerbTenses.PERFECT)
+			.add(EnumVerbPersons.YOU)
+			.add(EnumVerbPersons.YOU_PLURAL);
 		
 		List<VerbConjugationFilter> filters = new ArrayList<VerbConjugationFilter>();
-		filters.add(VerbTensesEnum.PERFECT);
-		filters.add(VerbPersonsEnum.YOU);
+		filters.add(EnumVerbTenses.PERFECT);
+		filters.add(EnumVerbPersons.YOU);
 		
 		ConjugatedItem item = table.asItemsFiltered(filters).get(0);
 		
-		assertEquals(VerbTensesEnum.PERFECT, item.getTense());
-		assertEquals(VerbPersonsEnum.YOU, item.getPerson());
+		assertEquals(EnumVerbTenses.PERFECT, item.getTense());
+		assertEquals(EnumVerbPersons.YOU, item.getPerson());
 	}
 	
 	@Test
 	public void testAsItemsFiltered2() {
 		ConjugationTable table = new ConjugationTable(new Verb("eda"))
-			.add(VerbPersonsEnum.YOU)
-			.add(VerbPersonsEnum.I)
-			.setTense(VerbTensesEnum.PERFECT)
-			.add(VerbPersonsEnum.YOU)
-			.add(VerbPersonsEnum.YOU_PLURAL);
+			.add(EnumVerbPersons.YOU)
+			.add(EnumVerbPersons.I)
+			.setTense(EnumVerbTenses.PERFECT)
+			.add(EnumVerbPersons.YOU)
+			.add(EnumVerbPersons.YOU_PLURAL);
 		
-		ConjugatedItem item = table.asItemsFiltered(VerbTensesEnum.PERFECT, VerbPersonsEnum.YOU).get(0);
+		ConjugatedItem item = table.asItemsFiltered(EnumVerbTenses.PERFECT, EnumVerbPersons.YOU).get(0);
 		
-		assertEquals(VerbTensesEnum.PERFECT, item.getTense());
-		assertEquals(VerbPersonsEnum.YOU, item.getPerson());
+		assertEquals(EnumVerbTenses.PERFECT, item.getTense());
+		assertEquals(EnumVerbPersons.YOU, item.getPerson());
 	}
 	
 	@Test
 	public void testAsList() {
 		ConjugationTable table = new ConjugationTable(new Verb("eda"))
-				.add(VerbPersonsEnum.YOU)
-				.add(VerbPersonsEnum.I)
-				.setTense(VerbTensesEnum.PERFECT)
-				.add(VerbPersonsEnum.YOU)
-				.add(VerbPersonsEnum.YOU_PLURAL);
+				.add(EnumVerbPersons.YOU)
+				.add(EnumVerbPersons.I)
+				.setTense(EnumVerbTenses.PERFECT)
+				.add(EnumVerbPersons.YOU)
+				.add(EnumVerbPersons.YOU_PLURAL);
 		
 		List<Term> list = table.asList();
 		
@@ -113,27 +113,27 @@ public class ConjugationTableTest {
 	@Test
 	public void testAsItemsList() {
 		ConjugationTable table = new ConjugationTable(new Verb("eda"))
-				.add(VerbPersonsEnum.YOU)
-				.add(VerbPersonsEnum.I)
-				.setTense(VerbTensesEnum.PERFECT)
-				.add(VerbPersonsEnum.YOU)
-				.add(VerbPersonsEnum.YOU_PLURAL);
+				.add(EnumVerbPersons.YOU)
+				.add(EnumVerbPersons.I)
+				.setTense(EnumVerbTenses.PERFECT)
+				.add(EnumVerbPersons.YOU)
+				.add(EnumVerbPersons.YOU_PLURAL);
 		
 		List<ConjugatedItem> list = table.asItemsList();
 		
-		assertEquals(VerbPersonsEnum.YOU, list.get(0).getPerson());
-		assertEquals(VerbPersonsEnum.I, list.get(1).getPerson());
-		assertEquals(VerbPersonsEnum.YOU, list.get(2).getPerson());
-		assertEquals(VerbPersonsEnum.YOU_PLURAL, list.get(3).getPerson());
+		assertEquals(EnumVerbPersons.YOU, list.get(0).getPerson());
+		assertEquals(EnumVerbPersons.I, list.get(1).getPerson());
+		assertEquals(EnumVerbPersons.YOU, list.get(2).getPerson());
+		assertEquals(EnumVerbPersons.YOU_PLURAL, list.get(3).getPerson());
 	}
 	
 	private ConjugationTable makeTable(String verb) {
 		return new ConjugationTable(new Verb(verb))
-			.setTense(VerbTensesEnum.PERFECT)
-			.setVoice(VerbVoicesEnum.PASSIVE)
-			.setMode(VerbModesEnum.DESIDERATIVE)
-			.setDefiniteness(VerbDefinitenessEnum.DEFINITE)
-			.add(VerbPersonsEnum.YOU_PLURAL);
+			.setTense(EnumVerbTenses.PERFECT)
+			.setVoice(EnumVerbVoices.PASSIVE)
+			.setMode(EnumVerbModes.DESIDERATIVE)
+			.setDefiniteness(EnumVerbDefiniteness.DEFINITE)
+			.add(EnumVerbPersons.YOU_PLURAL);
 	}
 	
 	@Test
@@ -141,7 +141,7 @@ public class ConjugationTableTest {
 		ConjugationTable table = this.makeTable("eda");
 		ConjugatedItem item = table.asItemsList().get(0);
 		
-		assertEquals(VerbDefinitenessEnum.DEFINITE, item.getDefiniteness());
+		assertEquals(EnumVerbDefiniteness.DEFINITE, item.getDefiniteness());
 	}
 	
 	@Test
@@ -149,7 +149,7 @@ public class ConjugationTableTest {
 		ConjugationTable table = this.makeTable("eda");
 		ConjugatedItem item = table.asItemsList().get(0);
 		
-		assertEquals(VerbModesEnum.DESIDERATIVE, item.getMode());
+		assertEquals(EnumVerbModes.DESIDERATIVE, item.getMode());
 	}
 	
 	@Test
@@ -157,7 +157,7 @@ public class ConjugationTableTest {
 		ConjugationTable table = this.makeTable("eda");
 		ConjugatedItem item = table.asItemsList().get(0);
 		
-		assertEquals(VerbTensesEnum.PERFECT, item.getTense());
+		assertEquals(EnumVerbTenses.PERFECT, item.getTense());
 	}
 	
 	@Test
@@ -165,7 +165,7 @@ public class ConjugationTableTest {
 		ConjugationTable table = this.makeTable("eda");
 		ConjugatedItem item = table.asItemsList().get(0);
 		
-		assertEquals(VerbVoicesEnum.PASSIVE, item.getVoice());
+		assertEquals(EnumVerbVoices.PASSIVE, item.getVoice());
 	}
 
 }

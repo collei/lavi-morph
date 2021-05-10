@@ -13,9 +13,9 @@ import org.junit.jupiter.api.Test;
 
 import br.net.heaven.lavi.morphology.core.Noun;
 import br.net.heaven.lavi.morphology.core.Term;
-import br.net.heaven.lavi.morphology.enums.NounCasesEnum;
-import br.net.heaven.lavi.morphology.enums.NounPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.NounPluralitiesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumNounCases;
+import br.net.heaven.lavi.morphology.enums.EnumNounPersons;
+import br.net.heaven.lavi.morphology.enums.EnumNounPluralities;
 import br.net.heaven.lavi.morphology.enums.filter.NounDeclensionFilter;
 
 public class DeclensionTableTest {
@@ -35,7 +35,7 @@ public class DeclensionTableTest {
 	@Test
 	public void testAddByCase() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-			.add(NounCasesEnum.ACCUSATIVE);
+			.add(EnumNounCases.ACCUSATIVE);
 			
 		Term term = table.asList().get(0);
 			
@@ -45,7 +45,7 @@ public class DeclensionTableTest {
 	@Test
 	public void testAddByPerson() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-			.add(NounPersonsEnum.I);
+			.add(EnumNounPersons.I);
 			
 		Term term = table.asList().get(0);
 			
@@ -55,13 +55,13 @@ public class DeclensionTableTest {
 	@Test
 	public void testAsFiltered() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-			.add(NounPersonsEnum.YOU)
-			.add(NounPersonsEnum.I)
-			.setPlurality(NounPluralitiesEnum.PLURAL)
-			.add(NounPersonsEnum.YOU)
-			.add(NounPersonsEnum.YOU_PLURAL);
+			.add(EnumNounPersons.YOU)
+			.add(EnumNounPersons.I)
+			.setPlurality(EnumNounPluralities.PLURAL)
+			.add(EnumNounPersons.YOU)
+			.add(EnumNounPersons.YOU_PLURAL);
 		
-		Term term = table.asFiltered(NounPluralitiesEnum.PLURAL, NounPersonsEnum.YOU).get(0);
+		Term term = table.asFiltered(EnumNounPluralities.PLURAL, EnumNounPersons.YOU).get(0);
 		
 		assertEquals("apaid", term.get());
 	}
@@ -69,35 +69,35 @@ public class DeclensionTableTest {
 	@Test
 	public void testAsItemsFilteredWithList() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-				.add(NounPersonsEnum.YOU)
-				.add(NounPersonsEnum.I)
-				.setPlurality(NounPluralitiesEnum.PLURAL)
-				.add(NounPersonsEnum.YOU)
-				.add(NounPersonsEnum.YOU_PLURAL);
+				.add(EnumNounPersons.YOU)
+				.add(EnumNounPersons.I)
+				.setPlurality(EnumNounPluralities.PLURAL)
+				.add(EnumNounPersons.YOU)
+				.add(EnumNounPersons.YOU_PLURAL);
 		
 		List<NounDeclensionFilter> filters = new ArrayList<NounDeclensionFilter>();
-		filters.add(NounPluralitiesEnum.PLURAL);
-		filters.add(NounPersonsEnum.YOU);
+		filters.add(EnumNounPluralities.PLURAL);
+		filters.add(EnumNounPersons.YOU);
 		
 		DeclensedItem item = table.asItemsFiltered(filters).get(0);
 		
-		assertEquals(NounPluralitiesEnum.PLURAL, item.getPlurality());
-		assertEquals(NounPersonsEnum.YOU, item.getPerson());
+		assertEquals(EnumNounPluralities.PLURAL, item.getPlurality());
+		assertEquals(EnumNounPersons.YOU, item.getPerson());
 	}
 	
 	@Test
 	public void testAsItemsFilteredWithDots() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-				.add(NounPersonsEnum.YOU)
-				.add(NounPersonsEnum.I)
-				.setPlurality(NounPluralitiesEnum.PLURAL)
-				.add(NounPersonsEnum.YOU)
-				.add(NounPersonsEnum.YOU_PLURAL);
+				.add(EnumNounPersons.YOU)
+				.add(EnumNounPersons.I)
+				.setPlurality(EnumNounPluralities.PLURAL)
+				.add(EnumNounPersons.YOU)
+				.add(EnumNounPersons.YOU_PLURAL);
 		
-		DeclensedItem item = table.asItemsFiltered(NounPluralitiesEnum.PLURAL, NounPersonsEnum.YOU).get(0);
+		DeclensedItem item = table.asItemsFiltered(EnumNounPluralities.PLURAL, EnumNounPersons.YOU).get(0);
 		
-		assertEquals(NounPluralitiesEnum.PLURAL, item.getPlurality());
-		assertEquals(NounPersonsEnum.YOU, item.getPerson());
+		assertEquals(EnumNounPluralities.PLURAL, item.getPlurality());
+		assertEquals(EnumNounPersons.YOU, item.getPerson());
 	}
 	
 	/////////////////// modify these below //////////////////////
@@ -105,11 +105,11 @@ public class DeclensionTableTest {
 	@Test
 	public void testAsList() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-				.add(NounPersonsEnum.YOU)
-				.add(NounPersonsEnum.I)
-				.setPlurality(NounPluralitiesEnum.PLURAL)
-				.add(NounPersonsEnum.YOU)
-				.add(NounPersonsEnum.YOU_PLURAL);
+				.add(EnumNounPersons.YOU)
+				.add(EnumNounPersons.I)
+				.setPlurality(EnumNounPluralities.PLURAL)
+				.add(EnumNounPersons.YOU)
+				.add(EnumNounPersons.YOU_PLURAL);
 		
 		List<Term> list = table.asList();
 		
@@ -128,38 +128,38 @@ public class DeclensionTableTest {
 	@Test
 	public void testAsItemsList() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-				.add(NounPersonsEnum.YOU)
-				.add(NounPersonsEnum.I)
-				.setPlurality(NounPluralitiesEnum.PLURAL)
-				.add(NounPersonsEnum.YOU)
-				.add(NounPersonsEnum.YOU_PLURAL);
+				.add(EnumNounPersons.YOU)
+				.add(EnumNounPersons.I)
+				.setPlurality(EnumNounPluralities.PLURAL)
+				.add(EnumNounPersons.YOU)
+				.add(EnumNounPersons.YOU_PLURAL);
 		
 		List<DeclensedItem> list = table.asItemsList();
 		
-		assertEquals(NounPersonsEnum.YOU, list.get(0).getPerson());
-		assertEquals(NounPersonsEnum.I, list.get(1).getPerson());
-		assertEquals(NounPersonsEnum.YOU, list.get(2).getPerson());
-		assertEquals(NounPersonsEnum.YOU_PLURAL, list.get(3).getPerson());
+		assertEquals(EnumNounPersons.YOU, list.get(0).getPerson());
+		assertEquals(EnumNounPersons.I, list.get(1).getPerson());
+		assertEquals(EnumNounPersons.YOU, list.get(2).getPerson());
+		assertEquals(EnumNounPersons.YOU_PLURAL, list.get(3).getPerson());
 	}
 	
 	@Test
 	public void testSetPlurality() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-				.setPlurality(NounPluralitiesEnum.DUAL)
-				.add(NounPersonsEnum.YOU_PLURAL);
+				.setPlurality(EnumNounPluralities.DUAL)
+				.add(EnumNounPersons.YOU_PLURAL);
 		DeclensedItem item = table.asItemsList().get(0);
 		
-		assertEquals(NounPluralitiesEnum.DUAL, item.getPlurality());
+		assertEquals(EnumNounPluralities.DUAL, item.getPlurality());
 	}
 	
 	@Test
 	public void testIfDefaultCaseIsNominative() {
 		DeclensionTable table = new DeclensionTable(new Noun("apa"))
-				.setPlurality(NounPluralitiesEnum.DUAL)
-				.add(NounPersonsEnum.YOU_PLURAL);
+				.setPlurality(EnumNounPluralities.DUAL)
+				.add(EnumNounPersons.YOU_PLURAL);
 		DeclensedItem item = table.asItemsList().get(0);
 		
-		assertEquals(NounCasesEnum.NOMINATIVE, item.getCase());
+		assertEquals(EnumNounCases.NOMINATIVE, item.getCase());
 	}
 
 

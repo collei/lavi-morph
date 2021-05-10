@@ -1,11 +1,13 @@
 package br.net.heaven.lavi.morphology.core;
 
-import br.net.heaven.lavi.morphology.enums.HarmonyEnum;
+import br.net.heaven.lavi.morphology.enums.EnumHarmony;
+import br.net.heaven.lavi.morphology.enums.EnumPartsOfSpeech;
 
 public class Term {
 	
 	private String term;
-	private HarmonyEnum harmony;
+	private EnumPartsOfSpeech partOfSpeech;
+	private EnumHarmony harmony;
 	private boolean vocalic;
 	
 	private void defineHarmony() {
@@ -14,12 +16,12 @@ public class Term {
 				case 'a':
 				case 'o':
 				case 'u':
-					this.harmony = HarmonyEnum.BACK;
+					this.harmony = EnumHarmony.BACK;
 					return;
 				case 'e':
 				case 'ö':
 				case 'ü':
-					this.harmony = HarmonyEnum.FRONT;
+					this.harmony = EnumHarmony.FRONT;
 					return;
 			}
 		}
@@ -33,6 +35,12 @@ public class Term {
 		this.term = term;
 		this.defineHarmony();
 		this.defineVocalicy();
+		this.partOfSpeech = EnumPartsOfSpeech.UNDEFINED;
+	}
+	
+	public Term(String term, EnumPartsOfSpeech partOfSpeech) {
+		this(term);
+		this.partOfSpeech = partOfSpeech;
 	}
 
 	public boolean endsWith(String suffix) {
@@ -52,6 +60,10 @@ public class Term {
 		return "" + this.term;
 	}
 	
+	public EnumPartsOfSpeech getPartOfSpeech() {
+		return this.partOfSpeech;
+	}
+	
 	public void appendSuffix(String suffix) {
 		this.term += suffix;
 		this.defineVocalicy();
@@ -61,7 +73,7 @@ public class Term {
 		return this.vocalic;
 	}
 	
-	public HarmonyEnum getHarmony() {
+	public EnumHarmony getHarmony() {
 		return this.harmony;
 	}
 	

@@ -5,14 +5,14 @@ import java.util.List;
 
 import br.net.heaven.lavi.morphology.core.Noun;
 import br.net.heaven.lavi.morphology.core.Term;
-import br.net.heaven.lavi.morphology.enums.NounCasesEnum;
-import br.net.heaven.lavi.morphology.enums.NounPersonsEnum;
-import br.net.heaven.lavi.morphology.enums.NounPluralitiesEnum;
+import br.net.heaven.lavi.morphology.enums.EnumNounCases;
+import br.net.heaven.lavi.morphology.enums.EnumNounPersons;
+import br.net.heaven.lavi.morphology.enums.EnumNounPluralities;
 import br.net.heaven.lavi.morphology.enums.filter.NounDeclensionFilter;
 
 public class DeclensionTable {
 	
-	private NounPluralitiesEnum plurality;
+	private EnumNounPluralities plurality;
 
 	private Noun noun;
 	private List<DeclensedItem> units;
@@ -26,18 +26,18 @@ public class DeclensionTable {
 			throw new IllegalArgumentException("Termo não pode ser uma string vazia!");
 		}
 		this.noun = noun;
-		this.plurality = NounPluralitiesEnum.SINGULAR;
+		this.plurality = EnumNounPluralities.SINGULAR;
 		this.units = new ArrayList<DeclensedItem>();
 	}
 	
 	/////*/////
 
-	public DeclensionTable setPlurality(NounPluralitiesEnum plurality) {
+	public DeclensionTable setPlurality(EnumNounPluralities plurality) {
 		this.plurality = plurality;
 		return this;
 	}
 	
-	public DeclensionTable add(NounCasesEnum nounCase) {
+	public DeclensionTable add(EnumNounCases nounCase) {
 		this.units.add(new DeclensedItem(
 				this.noun,
 				nounCase,
@@ -45,7 +45,7 @@ public class DeclensionTable {
 		return this;
 	}
 	
-	public DeclensionTable add(NounPersonsEnum person) {
+	public DeclensionTable add(EnumNounPersons person) {
 		this.units.add(new DeclensedItem(
 				this.noun,
 				person,

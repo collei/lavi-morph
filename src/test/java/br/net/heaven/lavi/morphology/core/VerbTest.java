@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import br.net.heaven.lavi.morphology.enums.HarmonyEnum;
+import br.net.heaven.lavi.morphology.enums.EnumHarmony;
 
 public class VerbTest {
 	
@@ -34,8 +34,8 @@ public class VerbTest {
 	public void testaSeHarmoniaEstaCorreta() {
 		Verb verbo1 = new Verb("ayumida");
 		Verb verbo2 = new Verb("benetida");
-		assertEquals(HarmonyEnum.BACK, verbo1.getHarmony());
-		assertEquals(HarmonyEnum.FRONT, verbo2.getHarmony());
+		assertEquals(EnumHarmony.BACK, verbo1.getHarmony());
+		assertEquals(EnumHarmony.FRONT, verbo2.getHarmony());
 	}
 
 	@Test
