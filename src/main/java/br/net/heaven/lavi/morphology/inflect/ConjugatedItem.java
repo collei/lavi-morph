@@ -147,7 +147,7 @@ public class ConjugatedItem {
 	}
 	
 	/**
-	 * Generates a copy of the current instance.
+	 * <p>Generates a copy of the current instance.</p>
 	 */
 	@Override
 	public ConjugatedItem clone() {

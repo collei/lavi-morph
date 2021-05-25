@@ -8,8 +8,22 @@ import br.net.heaven.lavi.morphology.enums.EnumVerbPersons;
 import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
 import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 
+/**
+ * <p>This class applies the rules for verb conjugation for every tense, voice, mode etc..</p>
+ * @author almir jr.
+ *
+ */
 public class Conjugator {
 	
+	/**
+	 * <p>Conjugates a verb into Factual pattern, given the parameters below.</p>
+	 * @param verb The verb to be conjugated
+	 * @param person The verb person
+	 * @param tense The verb tense
+	 * @param voice The verb voice
+	 * @param definiteness The verb definiteness
+	 * @return The conjugated verb as a String
+	 */
 	public static String doFactual(Verb verb, EnumVerbPersons person, EnumVerbTenses tense, EnumVerbVoices voice, EnumVerbDefiniteness definiteness) {
 		String suffix = "";
 		Term conjugated = new Term(verb.getStem());
@@ -48,11 +62,27 @@ public class Conjugator {
 		return conjugated.get();
 	}
 	
+	/**
+	 * <p>Conjugates a verb into a Desiderative pattern, given the parameters below.</p>
+	 * @param verb The verb to be conjugated
+	 * @param person The verb person
+	 * @param tense The verb tense
+	 * @param voice The verb voice
+	 * @param definiteness The verb definiteness
+	 * @return The conjugated verb as a String
+	 */
 	public static String doDesiderative(Verb verb, EnumVerbPersons person, EnumVerbTenses tense, EnumVerbVoices voice, EnumVerbDefiniteness definiteness) {
 		String partial = Conjugator.doFactual(verb, person, tense, voice, definiteness);
 		return "na " + partial;
 	}
 	
+	/**
+	 * <p>Conjugates a verb into Imperative pattern, given the parameters below.</p>
+	 * @param verb The verb to be conjugated
+	 * @param person The verb person
+	 * @param definiteness The verb definiteness
+	 * @return The conjugated verb as a String
+	 */
 	public static String doImperative(Verb verb, EnumVerbPersons person, EnumVerbDefiniteness definiteness) {
 		String suffix = "";
 		Term conjugated = new Term(verb.getStem());
@@ -89,6 +119,17 @@ public class Conjugator {
 	
 	/// for internal use
 	
+	/**
+	 * <p>Returns one of the given suffixes based upon the given person.</p>
+	 * @param person The given person
+	 * @param i The suffix for 1st singular person
+	 * @param you The suffix for 2nd singular person
+	 * @param heSheIt The suffix for 3rd singular person
+	 * @param we The suffix for 1st plural person
+	 * @param youPlural The suffix for 2nd plural person 
+	 * @param they The suffix for 3rd plural person
+	 * @return one of the suffixes given above, or an empty string ("") otherwise
+	 */
 	private static String choosePerson(EnumVerbPersons person, String i, String you, String heSheIt, String we, String youPlural, String they) {
 		switch (person) {
 			case I:
@@ -102,6 +143,14 @@ public class Conjugator {
 		}
 	}
 	
+	/**
+	 * <p>Returns one of the given suffixes based upon the given person.</p>
+	 * @param person The given person
+	 * @param you The suffix for 2nd singular person
+	 * @param we The suffix for 1st plural person
+	 * @param youPlural The suffix for 2nd plural person 
+	 * @return one of the suffixes given above, or an empty string ("") otherwise
+	 */
 	private static String choosePerson(EnumVerbPersons person, String you, String we, String youPlural) {
 		switch (person) {
 			case YOU:
@@ -115,6 +164,12 @@ public class Conjugator {
 		}
 	}
 	
+	/**
+	 * <p>Attaches the appropriate suffix for the given voice. It takes vocalicy and vowel harmony in account.</p>
+	 * @param conjugatedVerb A conjugated form of the verb as a Term instance
+	 * @param voice The given voice
+	 * @return A modified version of the conjugated term for the given voice
+	 */
 	private static String generateVoiceAffix(Term conjugatedVerb, EnumVerbVoices voice) {
 		boolean vocalic = conjugatedVerb.isVocalic();
 		EnumHarmony harmony = conjugatedVerb.getHarmony();

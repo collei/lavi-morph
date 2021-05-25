@@ -6,15 +6,41 @@ import br.net.heaven.lavi.morphology.enums.EnumNounCases;
 import br.net.heaven.lavi.morphology.enums.EnumNounPluralities;
 import br.net.heaven.lavi.morphology.enums.EnumNounPersons;
 
+/**
+ * <p>This class applies the rules governing the noun declension process.</p>
+ * @author almir jr.
+ *
+ */
 public class Declensor {
 
+	/**
+	 * <p>Makes declension of the Term, given the parameters below
+	 * @param term The term to be declensed
+	 * @param person The declensed person
+	 * @param nounCase The declensed case
+	 * @param plurality The declensed plurality
+	 * @return the declensed term as a String
+	 */
 	public static String makeDeclension(Term term, EnumNounPersons person, EnumNounCases nounCase, EnumNounPluralities plurality) {
+		return makeDeclension(new Term(makePossessive(term, person, plurality)), nounCase, EnumNounPluralities.SINGULAR);
+		/*  
+		 * <*> the line above makes the same of these four below <*>
+		 *
 		String possessive = makePossessive(term, person, plurality);
 		Term possesiveTerm = new Term(possessive);
 		Term possessiveDeclensed = new Term(makeDeclension(possesiveTerm, nounCase, EnumNounPluralities.SINGULAR));
 		return possessiveDeclensed.get();
+		 *
+		 */
 	}
 	
+	/**
+	 * <p>Makes declension of the Term, given the parameters below
+	 * @param term The term to be declensed
+	 * @param nounCase The declensed case
+	 * @param plurality The declensed plurality
+	 * @return the declensed term as a String
+	 */
 	public static String makeDeclension(Term term, EnumNounCases nounCase, EnumNounPluralities plurality) {
 		String affix = "";
 		//
@@ -61,6 +87,13 @@ public class Declensor {
 		return term.get() + affix;
 	}
 	
+	/**
+	 * <p>Makes the possessive nominative declension of the term, given the parameters below
+	 * @param term The term to be declensed
+	 * @param person The declensed person
+	 * @param plurality The declensed plurality
+	 * @return the declensed term as a String
+	 */
 	public static String makePossessive(Term term, EnumNounPersons person, EnumNounPluralities plurality) {
 		String affix = "";
 		//
@@ -105,6 +138,17 @@ public class Declensor {
 
 	/*** for internal use only ***/
 	
+	/**
+	 * <p>Given the person, returns one of the given suffixes
+	 * @param person The given person
+	 * @param i The suffix for 1st singular person
+	 * @param you The suffix for 2nd singular person
+	 * @param heSheIt The suffix for 3rd singular person
+	 * @param we The suffix for 1st plural person
+	 * @param youPlural The suffix for 2nd plural person
+	 * @param they The suffix for 3rd plural person
+	 * @return One of the suffixes above if person matches one of the options, null otherwise
+	 */
 	private static String choosePerson(EnumNounPersons person, String i, String you, String heSheIt, String we, String youPlural, String they) {
 		switch (person) {
 		case I:
@@ -124,6 +168,21 @@ public class Declensor {
 		}
 	}
 	
+	/**
+	 * <p>Given the case, returns one of the given suffixes
+	 * @param nounCase The given case
+	 * @param nominative The suffix for the nominative case
+	 * @param accusative The suffix for the accusative case
+	 * @param genitive The suffix for the genitive case
+	 * @param dative The suffix for the dative case
+	 * @param ablative The suffix for the ablative case
+	 * @param locative The suffix for the locative case
+	 * @param instrumental The suffix for the instrumental case
+	 * @param partitive The suffix for the partitive case
+	 * @param abessive The suffix for the abessive case
+	 * @param comitative The suffix for the comitative case
+	 * @return One of the suffixes above if person matches one of the options, the nominative option otherwise
+	 */
 	private static String chooseCase(EnumNounCases nounCase, String nominative, String accusative, String genitive, String dative, String ablative, String locative, String instrumental, String partitive, String abessive, String comitative) {
 		switch (nounCase) {
 			case ACCUSATIVE:
