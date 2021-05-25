@@ -51,7 +51,7 @@ public enum EnumVerbTenses implements VerbConjugationFilter {
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
-	 * @return
+	 * @return the list of all possible values
 	 */
 	public static List<EnumVerbTenses> asList() {
 		return Arrays.asList(IMPERFECT, PERFECT);

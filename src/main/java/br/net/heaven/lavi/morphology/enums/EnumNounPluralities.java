@@ -51,7 +51,7 @@ public enum EnumNounPluralities implements NounDeclensionFilter {
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
-	 * @return
+	 * @return the list of all possible values
 	 */
 	public static List<EnumNounPluralities> asList() {
 		return Arrays.asList(SINGULAR, DUAL, PLURAL);

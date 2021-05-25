@@ -88,7 +88,7 @@ public enum EnumPartsOfSpeech {
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
-	 * @return
+	 * @return the list of all possible values
 	 */
 	public static List<EnumPartsOfSpeech> asList() {
 		return Arrays.asList(NOUN,ADJECTIVE,ADVERB,VERB,PREPOSITION,POSTPOSITION,CIRCUMPOSITION,PRONOUN,NUMBER,DISCOURSE_MARKER,PARTICLE,CONJUNCTION,INTERJECTION,ASPECT_MARKER,EVIDENCE_MARKER,EMPHASIZER,SEPARATOR,MODE_MARKER,TENSE_MARKER,COVERB,COPULA,PREFIX,SUFFIX,PHRASE);

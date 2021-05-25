@@ -93,7 +93,7 @@ public class FilterUtils {
 	/**
 	 * <p>Converts a list of String representations into a list of VerbConjugationFilter values.
 	 * For each String of the list, returns a VerbConjugationFilter value if possible.</p>
-	 * @param string A list of string representations to be converted
+	 * @param stringFilters A list of string representations to be converted
 	 * @return A list of VerbConjugationFilter values converted from the string representations
 	 */
 	public static List<VerbConjugationFilter> asFilterList(List<String> stringFilters) {

@@ -51,7 +51,7 @@ public enum EnumVerbModes implements VerbConjugationFilter {
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
-	 * @return
+	 * @return the list of all possible values
 	 */
 	public static List<EnumVerbModes> asList() {
 		return Arrays.asList(FACTUAL, DESIDERATIVE, IMPERATIVE);

@@ -51,7 +51,7 @@ public enum EnumVerbPersons implements VerbConjugationFilter {
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
-	 * @return
+	 * @return the list of all possible values
 	 */
 	public static List<EnumVerbPersons> asList() {
 		return Arrays.asList(I, YOU, HE_SHE_IT, WE, YOU_PLURAL, THEY);

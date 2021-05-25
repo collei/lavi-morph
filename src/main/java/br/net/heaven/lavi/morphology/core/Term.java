@@ -72,8 +72,8 @@ public class Term {
 	
 	/**
 	 * <p>Creates a new instance of a term and sets its part of speech.</p>
-	 * @param term
-	 * @param partOfSpeech
+	 * @param term The String representation of this term
+	 * @param partOfSpeech the part of speech the term belongs to
 	 */
 	public Term(String term, EnumPartsOfSpeech partOfSpeech) {
 		this(term);

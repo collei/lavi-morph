@@ -51,7 +51,7 @@ public enum EnumVerbVoices implements VerbConjugationFilter {
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
-	 * @return
+	 * @return the list of all possible values
 	 */
 	public static List<EnumVerbVoices> asList() {
 		return Arrays.asList(ACTIVE, MEDIAL, PASSIVE);
