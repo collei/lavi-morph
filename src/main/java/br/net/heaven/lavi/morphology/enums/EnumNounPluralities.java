@@ -6,7 +6,7 @@ import java.util.List;
 import br.net.heaven.lavi.morphology.enums.filter.NounDeclensionFilter;
 
 /**
- * <p>Enumerated harmony types.</p>
+ * <p>Enumerated noun pluralities.</p>
  * @author almir jr.
  *
  */

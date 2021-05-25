@@ -9,6 +9,11 @@ import br.net.heaven.lavi.morphology.enums.EnumVerbTenses;
 import br.net.heaven.lavi.morphology.enums.EnumVerbVoices;
 import br.net.heaven.lavi.morphology.inflect.Conjugator;
 
+/**
+ * <p>Represents a verb, a word that indicates the attributes of an action related to the time and mode of the action, to the agent and, sometimes, the object.</p>
+ * @author sjunio
+ *
+ */
 public class Verb {
 	
 	/**

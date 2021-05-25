@@ -74,6 +74,7 @@ public class ConjugatedItem {
 	/**
 	 * <p>Gets the original verb.</p>
 	 * @return the original verb
+	 * @see Verb
 	 */
 	public Verb getVerb() {
 		return this.verb;
@@ -82,6 +83,7 @@ public class ConjugatedItem {
 	/**
 	 * <p>Gets the conjugated form.</p>
 	 * @return the conjugated form
+	 * @see Term
 	 */
 	public Term getConjugated() {
 		return this.conjugated;

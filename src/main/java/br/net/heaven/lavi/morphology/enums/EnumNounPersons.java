@@ -6,7 +6,7 @@ import java.util.List;
 import br.net.heaven.lavi.morphology.enums.filter.NounDeclensionFilter;
 
 /**
- * <p>Enumerated harmony types.</p>
+ * <p>Enumerated possessive persons of nominative.</p>
  * @author almir jr.
  *
  */

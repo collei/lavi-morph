@@ -4,7 +4,7 @@ import br.net.heaven.lavi.morphology.enums.EnumHarmony;
 import br.net.heaven.lavi.morphology.enums.EnumPartsOfSpeech;
 
 /**
- * <p>The basic attributes of any word in a given language.</p>
+ * <p>Holds the basic attributes of any word in the Lavi language.</p>
  * 
  * @author sjunio
  *

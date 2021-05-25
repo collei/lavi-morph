@@ -6,7 +6,7 @@ import java.util.List;
 import br.net.heaven.lavi.morphology.enums.filter.VerbConjugationFilter;
 
 /**
- * <p>Enumerated harmony types.</p>
+ * <p>Enumerated verb tenses.</p>
  * @author almir jr.
  *
  */

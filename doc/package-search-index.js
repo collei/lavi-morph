@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"br.net.heaven.lavi.morphology.enums"},{"l":"br.net.heaven.lavi.morphology.enums.filter"}]

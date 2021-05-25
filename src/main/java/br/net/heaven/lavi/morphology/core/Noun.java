@@ -7,7 +7,7 @@ import br.net.heaven.lavi.morphology.enums.EnumPartsOfSpeech;
 import br.net.heaven.lavi.morphology.inflect.Declensor;
 
 /**
- * <p>Noun is a word that name a being in the world.</p>
+ * <p>Noun is a word that names a being in the world.</p>
  * 
  * @author almir jr.
  *

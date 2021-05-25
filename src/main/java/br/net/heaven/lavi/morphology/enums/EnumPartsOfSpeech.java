@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * <p>Enumerated harmony types.</p>
+ * <p>Enumerated parts of speech.</p>
  * @author almir jr.
  *
  */
