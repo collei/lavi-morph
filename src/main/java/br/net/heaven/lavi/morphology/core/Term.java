@@ -36,15 +36,16 @@ public class Term {
 	 */
 	private void defineHarmony() {
 		for (int pos = this.term.length()-1; pos >= 0; pos--) {
-			switch (this.term.charAt(pos)) {
-				case 'a':
-				case 'o':
-				case 'u':
+			String ch = "" + this.term.charAt(pos);
+			switch (ch) {
+				case "a":
+				case "o":
+				case "u":
 					this.harmony = EnumHarmony.BACK;
 					return;
-				case 'e':
-				case 'ö':
-				case 'ü':
+				case "e":
+				case "ö":
+				case "ü":
 					this.harmony = EnumHarmony.FRONT;
 					return;
 			}
