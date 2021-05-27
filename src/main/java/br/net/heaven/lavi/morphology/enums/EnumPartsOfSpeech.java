@@ -3,6 +3,11 @@ package br.net.heaven.lavi.morphology.enums;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * <p>Enumerated parts of speech.</p>
+ * @author almir jr.
+ *
+ */
 public enum EnumPartsOfSpeech {
 
 	UNDEFINED(0,"UNDEFINED","undefined"),
@@ -31,28 +36,60 @@ public enum EnumPartsOfSpeech {
 	SUFFIX(23,"SUFFIX","suff."),
 	PHRASE(24,"PHRASE","phrase");
 	
+	/**
+	 * <p>numeric value of the type.</p>
+	 */
 	private int value;
+	
+	/**
+	 * <p>textual description of the type.</p>
+	 */
 	private String description;
+	
+	/**
+	 * <p>abbreviated form of the textual description of the type.</p>
+	 */
 	private String abbreviation;
 	
+	/**
+	 * <p>Creates a new type of this enumeration.</p>
+	 * @param value the numeric value of the type
+	 * @param description the textual description of the value
+	 * @param abbreviation the abbreviated for of the textual description
+	 */
 	EnumPartsOfSpeech(int value, String description, String abbreviation) {
 		this.value = value;
 		this.description = description;
 		this.abbreviation = abbreviation;
 	}
 
+	/**
+	 * <p>returns the numeric value of the type.</p>
+	 * @return the numeric value of the type
+	 */
 	public int getValue() {
 		return this.value;
 	}
 
+	/**
+	 * <p>returns the abbreviated form of the textual description.</p>
+	 * @return the abbreviated form of the textual description
+	 */
 	public String getAbbreviation() {
 		return this.abbreviation;
 	}
 	
+	/**
+	 * <p>gets the textual description of the type.</p>
+	 */
 	public String toString() {
 		return this.description;
 	}
 	
+	/**
+	 * <p>Generates the list of the enumerated types.</p>
+	 * @return the list of all possible values
+	 */
 	public static List<EnumPartsOfSpeech> asList() {
 		return Arrays.asList(NOUN,ADJECTIVE,ADVERB,VERB,PREPOSITION,POSTPOSITION,CIRCUMPOSITION,PRONOUN,NUMBER,DISCOURSE_MARKER,PARTICLE,CONJUNCTION,INTERJECTION,ASPECT_MARKER,EVIDENCE_MARKER,EMPHASIZER,SEPARATOR,MODE_MARKER,TENSE_MARKER,COVERB,COPULA,PREFIX,SUFFIX,PHRASE);
 	}
