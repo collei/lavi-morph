@@ -1,4 +1,4 @@
-package br.com.collei.lavi.morphology.filter;
+package br.com.collei.lavi.morphology.enums.filter;
 
 /**
  * <p>The filter for noun declension.</p>

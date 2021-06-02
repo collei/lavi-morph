@@ -1,6 +1,6 @@
 package br.com.collei.lavi.morphology.test.helpers;
 
-import br.com.collei.lavi.morphology.core.Verb;
+import br.com.collei.lavi.morphology.enums.core.Verb;
 
 public class VerbTestListBuilder {
 	

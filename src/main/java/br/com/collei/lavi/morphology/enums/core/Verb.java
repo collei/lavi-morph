@@ -1,13 +1,13 @@
-package br.com.collei.lavi.morphology.core;
+package br.com.collei.lavi.morphology.enums.core;
 
-import br.com.collei.lavi.morphology.EnumHarmony;
-import br.com.collei.lavi.morphology.EnumPartsOfSpeech;
-import br.com.collei.lavi.morphology.EnumVerbDefiniteness;
-import br.com.collei.lavi.morphology.EnumVerbModes;
-import br.com.collei.lavi.morphology.EnumVerbPersons;
-import br.com.collei.lavi.morphology.EnumVerbTenses;
-import br.com.collei.lavi.morphology.EnumVerbVoices;
-import br.com.collei.lavi.morphology.inflect.Conjugator;
+import br.com.collei.lavi.morphology.enums.EnumHarmony;
+import br.com.collei.lavi.morphology.enums.EnumPartsOfSpeech;
+import br.com.collei.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.com.collei.lavi.morphology.enums.EnumVerbModes;
+import br.com.collei.lavi.morphology.enums.EnumVerbPersons;
+import br.com.collei.lavi.morphology.enums.EnumVerbTenses;
+import br.com.collei.lavi.morphology.enums.EnumVerbVoices;
+import br.com.collei.lavi.morphology.enums.inflect.Conjugator;
 
 /**
  * <p>Represents a verb, a word that indicates the attributes of an action related to the time and mode of the action, to the agent and, sometimes, the object.</p>
@@ -15,6 +15,12 @@ import br.com.collei.lavi.morphology.inflect.Conjugator;
  *
  */
 public class Verb {
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	@SuppressWarnings("unused")
+	private static final long serialVersionUID = 98274998904169L;
 	
 	/**
 	 * The Term instance representing internal value of the verb
@@ -100,6 +106,15 @@ public class Verb {
 		return new Term(conjugated, EnumPartsOfSpeech.VERB);
 	}
 
+	/**
+	 * <p>Returns its internal representation.</p>
+	 * @return the internal representation
+	 */
+	@Override
+	public String toString() {
+		return this.get();
+	}
+	
 	/**
 	 * Tests for equality with another verb
 	 * @param verb The another verb

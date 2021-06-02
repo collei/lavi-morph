@@ -1,13 +1,13 @@
-package br.com.collei.lavi.morphology.filter;
+package br.com.collei.lavi.morphology.enums.filter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.collei.lavi.morphology.EnumVerbDefiniteness;
-import br.com.collei.lavi.morphology.EnumVerbModes;
-import br.com.collei.lavi.morphology.EnumVerbPersons;
-import br.com.collei.lavi.morphology.EnumVerbTenses;
-import br.com.collei.lavi.morphology.EnumVerbVoices;
+import br.com.collei.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.com.collei.lavi.morphology.enums.EnumVerbModes;
+import br.com.collei.lavi.morphology.enums.EnumVerbPersons;
+import br.com.collei.lavi.morphology.enums.EnumVerbTenses;
+import br.com.collei.lavi.morphology.enums.EnumVerbVoices;
 
 /**
  * <p>Utility class for applying filters upon verb conjugation work.</p>
@@ -16,6 +16,11 @@ import br.com.collei.lavi.morphology.EnumVerbVoices;
  */
 public class FilterUtils {
 	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
+
 	/**
 	 * <p>Internal list of every possible verb conjugation filter to be checked against strings through fromString() method.</p>
 	 */

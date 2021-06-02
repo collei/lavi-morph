@@ -1,19 +1,24 @@
-package br.com.collei.lavi.morphology;
+package br.com.collei.lavi.morphology.enums;
 
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.collei.lavi.morphology.filter.NounDeclensionFilter;
+import br.com.collei.lavi.morphology.enums.filter.VerbConjugationFilter;
 
 /**
- * <p>Enumerated noun pluralities.</p>
+ * <p>Enumerated verb voices.</p>
  * @author almir jr.
  *
  */
-public enum EnumNounPluralities implements NounDeclensionFilter {
+public enum EnumVerbVoices implements VerbConjugationFilter {
 
-	SINGULAR(1,"SINGULAR"), DUAL(2,"DUAL"), PLURAL(3,"PLURAL");
-
+	ACTIVE(1,"ACTIVE"), MEDIAL(2,"MEDIAL"), PASSIVE(3,"PASSIVE");
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
+	
 	/**
 	 * <p>numeric value of the type.</p>
 	 */
@@ -29,7 +34,7 @@ public enum EnumNounPluralities implements NounDeclensionFilter {
 	 * @param value the numeric value of the type
 	 * @param description the textual description of the value
 	 */
-	EnumNounPluralities(int value, String description) {
+	EnumVerbVoices(int value, String description) {
 		this.value = value;
 		this.description = description;
 	}
@@ -45,16 +50,17 @@ public enum EnumNounPluralities implements NounDeclensionFilter {
 	/**
 	 * <p>gets the textual description of the type.</p>
 	 */
+	@Override
 	public String toString() {
 		return this.description;
-	}	
+	}
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
 	 * @return the list of all possible values
 	 */
-	public static List<EnumNounPluralities> asList() {
-		return Arrays.asList(SINGULAR, DUAL, PLURAL);
+	public static List<EnumVerbVoices> asList() {
+		return Arrays.asList(ACTIVE, MEDIAL, PASSIVE);
 	}
 	
 }

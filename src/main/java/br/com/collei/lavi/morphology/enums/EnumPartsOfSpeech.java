@@ -1,4 +1,4 @@
-package br.com.collei.lavi.morphology;
+package br.com.collei.lavi.morphology.enums;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,6 +35,11 @@ public enum EnumPartsOfSpeech {
 	PREFIX(22,"PREFIX","pref."),
 	SUFFIX(23,"SUFFIX","suff."),
 	PHRASE(24,"PHRASE","phrase");
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
 	
 	/**
 	 * <p>numeric value of the type.</p>
@@ -82,6 +87,7 @@ public enum EnumPartsOfSpeech {
 	/**
 	 * <p>gets the textual description of the type.</p>
 	 */
+	@Override
 	public String toString() {
 		return this.description;
 	}

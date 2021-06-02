@@ -1,18 +1,23 @@
-package br.com.collei.lavi.morphology;
+package br.com.collei.lavi.morphology.enums;
 
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.collei.lavi.morphology.filter.VerbConjugationFilter;
+import br.com.collei.lavi.morphology.enums.filter.VerbConjugationFilter;
 
 /**
- * <p>Enumerated verb modes.</p>
+ * <p>Enumerated verb definitenesses.</p>
  * @author almir jr.
  *
  */
-public enum EnumVerbModes implements VerbConjugationFilter {
+public enum EnumVerbDefiniteness implements VerbConjugationFilter {
 
-	FACTUAL(1,"FACTUAL"), DESIDERATIVE(2,"DESIDERATIVE"), IMPERATIVE(3,"IMPERATIVE");
+	INDEFINITE(1,"INDEFINITE"), DEFINITE(2,"DEFINITE");
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
 	
 	/**
 	 * <p>numeric value of the type.</p>
@@ -29,7 +34,7 @@ public enum EnumVerbModes implements VerbConjugationFilter {
 	 * @param value the numeric value of the type
 	 * @param description the textual description of the value
 	 */
-	EnumVerbModes(int value, String description) {
+	EnumVerbDefiniteness(int value, String description) {
 		this.value = value;
 		this.description = description;
 	}
@@ -45,16 +50,17 @@ public enum EnumVerbModes implements VerbConjugationFilter {
 	/**
 	 * <p>gets the textual description of the type.</p>
 	 */
+	@Override
 	public String toString() {
 		return this.description;
-	}	
+	}
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
 	 * @return the list of all possible values
 	 */
-	public static List<EnumVerbModes> asList() {
-		return Arrays.asList(FACTUAL, DESIDERATIVE, IMPERATIVE);
+	public static List<EnumVerbDefiniteness> asList() {
+		return Arrays.asList(INDEFINITE, DEFINITE);
 	}
 	
 }
