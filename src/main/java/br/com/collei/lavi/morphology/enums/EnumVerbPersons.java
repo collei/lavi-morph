@@ -1,35 +1,40 @@
-package br.com.collei.lavi.morphology;
+package br.com.collei.lavi.morphology.enums;
 
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.collei.lavi.morphology.filter.VerbConjugationFilter;
+import br.com.collei.lavi.morphology.enums.filter.VerbConjugationFilter;
 
 /**
- * <p>Enumerated verb definitenesses.</p>
+ * <p>Enumerated verb persons.</p>
  * @author almir jr.
  *
  */
-public enum EnumVerbDefiniteness implements VerbConjugationFilter {
+public enum EnumVerbPersons implements VerbConjugationFilter {
 
-	INDEFINITE(1,"INDEFINITE"), DEFINITE(2,"DEFINITE");
+	I(1,"I"), YOU(2,"YOU"), HE_SHE_IT(3,"HE_SHE_IT"), WE(4,"WE"), YOU_PLURAL(5,"YOU_PLURAL"), THEY(6,"THEY");
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
 	
 	/**
 	 * <p>numeric value of the type.</p>
 	 */
-	private int value;
+	private final int value;
 	
 	/**
 	 * <p>textual description of the type.</p>
 	 */
-	private String description;
+	private final String description;
 	
 	/**
 	 * <p>Creates a new type of this enumeration.</p>
 	 * @param value the numeric value of the type
 	 * @param description the textual description of the value
 	 */
-	EnumVerbDefiniteness(int value, String description) {
+	EnumVerbPersons(int value, String description) {
 		this.value = value;
 		this.description = description;
 	}
@@ -45,6 +50,7 @@ public enum EnumVerbDefiniteness implements VerbConjugationFilter {
 	/**
 	 * <p>gets the textual description of the type.</p>
 	 */
+	@Override
 	public String toString() {
 		return this.description;
 	}
@@ -53,8 +59,8 @@ public enum EnumVerbDefiniteness implements VerbConjugationFilter {
 	 * <p>Generates the list of the enumerated types.</p>
 	 * @return the list of all possible values
 	 */
-	public static List<EnumVerbDefiniteness> asList() {
-		return Arrays.asList(INDEFINITE, DEFINITE);
+	public static List<EnumVerbPersons> asList() {
+		return Arrays.asList(I, YOU, HE_SHE_IT, WE, YOU_PLURAL, THEY);
 	}
 	
 }

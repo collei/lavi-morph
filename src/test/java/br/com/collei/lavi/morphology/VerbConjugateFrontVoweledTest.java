@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import br.com.collei.lavi.morphology.EnumVerbDefiniteness;
-import br.com.collei.lavi.morphology.EnumVerbModes;
-import br.com.collei.lavi.morphology.EnumVerbPersons;
-import br.com.collei.lavi.morphology.EnumVerbTenses;
-import br.com.collei.lavi.morphology.EnumVerbVoices;
-import br.com.collei.lavi.morphology.core.Verb;
+import br.com.collei.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.com.collei.lavi.morphology.enums.EnumVerbModes;
+import br.com.collei.lavi.morphology.enums.EnumVerbPersons;
+import br.com.collei.lavi.morphology.enums.EnumVerbTenses;
+import br.com.collei.lavi.morphology.enums.EnumVerbVoices;
+import br.com.collei.lavi.morphology.enums.core.Verb;
 import br.com.collei.lavi.morphology.test.helpers.VerbTestItem;
 import br.com.collei.lavi.morphology.test.helpers.VerbTestList;
 import br.com.collei.lavi.morphology.test.helpers.VerbTestListBuilder;

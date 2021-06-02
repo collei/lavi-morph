@@ -1,10 +1,10 @@
-package br.com.collei.lavi.morphology.core;
+package br.com.collei.lavi.morphology.enums.core;
 
-import br.com.collei.lavi.morphology.EnumNounCases;
-import br.com.collei.lavi.morphology.EnumNounPersons;
-import br.com.collei.lavi.morphology.EnumNounPluralities;
-import br.com.collei.lavi.morphology.EnumPartsOfSpeech;
-import br.com.collei.lavi.morphology.inflect.Declensor;
+import br.com.collei.lavi.morphology.enums.EnumNounCases;
+import br.com.collei.lavi.morphology.enums.EnumNounPersons;
+import br.com.collei.lavi.morphology.enums.EnumNounPluralities;
+import br.com.collei.lavi.morphology.enums.EnumPartsOfSpeech;
+import br.com.collei.lavi.morphology.enums.inflect.Declensor;
 
 /**
  * <p>Noun is a word that names a being in the world.</p>
@@ -13,6 +13,12 @@ import br.com.collei.lavi.morphology.inflect.Declensor;
  *
  */
 public class Noun extends Term {
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	@SuppressWarnings("unused")
+	private static final long serialVersionUID = 98274998904169L;
 	
 	/**
 	 * <p>Creates a noun instance.</p>

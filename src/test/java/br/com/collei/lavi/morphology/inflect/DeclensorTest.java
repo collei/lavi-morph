@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.collei.lavi.morphology.EnumNounCases;
-import br.com.collei.lavi.morphology.EnumNounPersons;
-import br.com.collei.lavi.morphology.EnumNounPluralities;
-import br.com.collei.lavi.morphology.core.Term;
-import br.com.collei.lavi.morphology.inflect.Declensor;
+import br.com.collei.lavi.morphology.enums.EnumNounCases;
+import br.com.collei.lavi.morphology.enums.EnumNounPersons;
+import br.com.collei.lavi.morphology.enums.EnumNounPluralities;
+import br.com.collei.lavi.morphology.enums.core.Term;
+import br.com.collei.lavi.morphology.enums.inflect.Declensor;
 
 public class DeclensorTest {
 	

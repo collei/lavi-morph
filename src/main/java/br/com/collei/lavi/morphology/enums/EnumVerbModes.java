@@ -1,33 +1,40 @@
-package br.com.collei.lavi.morphology;
+package br.com.collei.lavi.morphology.enums;
 
 import java.util.Arrays;
 import java.util.List;
 
+import br.com.collei.lavi.morphology.enums.filter.VerbConjugationFilter;
+
 /**
- * <p>Enumerated harmony types.</p>
+ * <p>Enumerated verb modes.</p>
  * @author almir jr.
  *
  */
-public enum EnumHarmony {
+public enum EnumVerbModes implements VerbConjugationFilter {
 
-	BACK(1,"BACK"), FRONT(2,"FRONT");
+	FACTUAL(1,"FACTUAL"), DESIDERATIVE(2,"DESIDERATIVE"), IMPERATIVE(3,"IMPERATIVE");
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
 	
 	/**
 	 * <p>numeric value of the type.</p>
 	 */
-	private int value;
+	private final int value;
 	
 	/**
 	 * <p>textual description of the type.</p>
 	 */
-	private String description;
+	private final String description;
 	
 	/**
 	 * <p>Creates a new type of this enumeration.</p>
 	 * @param value the numeric value of the type
 	 * @param description the textual description of the value
 	 */
-	EnumHarmony(int value, String description) {
+	EnumVerbModes(int value, String description) {
 		this.value = value;
 		this.description = description;
 	}
@@ -43,16 +50,17 @@ public enum EnumHarmony {
 	/**
 	 * <p>gets the textual description of the type.</p>
 	 */
+	@Override
 	public String toString() {
 		return this.description;
-	}
+	}	
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
 	 * @return the list of all possible values
 	 */
-	public static List<EnumHarmony> asList() {
-		return Arrays.asList(BACK, FRONT);
+	public static List<EnumVerbModes> asList() {
+		return Arrays.asList(FACTUAL, DESIDERATIVE, IMPERATIVE);
 	}
 	
 }

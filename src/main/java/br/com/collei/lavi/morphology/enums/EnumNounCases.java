@@ -1,9 +1,9 @@
-package br.com.collei.lavi.morphology;
+package br.com.collei.lavi.morphology.enums;
 
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.collei.lavi.morphology.filter.NounDeclensionFilter;
+import br.com.collei.lavi.morphology.enums.filter.NounDeclensionFilter;
 
 /**
  * <p>Enumerated noun cases.</p>
@@ -24,14 +24,19 @@ public enum EnumNounCases implements NounDeclensionFilter {
 	COMITATIVE(10,"COMITATIVE");
 	
 	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
+	
+	/**
 	 * <p>numeric value of the type.</p>
 	 */
-	private int value;
+	private final int value;
 	
 	/**
 	 * <p>textual description of the type.</p>
 	 */
-	private String description;
+	private final String description;
 	
 	/**
 	 * <p>Creates a new type of this enumeration.</p>
@@ -54,6 +59,7 @@ public enum EnumNounCases implements NounDeclensionFilter {
 	/**
 	 * <p>gets the textual description of the type.</p>
 	 */
+	@Override
 	public String toString() {
 		return this.description;
 	}	

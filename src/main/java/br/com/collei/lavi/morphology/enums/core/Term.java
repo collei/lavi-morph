@@ -1,7 +1,7 @@
-package br.com.collei.lavi.morphology.core;
+package br.com.collei.lavi.morphology.enums.core;
 
-import br.com.collei.lavi.morphology.EnumHarmony;
-import br.com.collei.lavi.morphology.EnumPartsOfSpeech;
+import br.com.collei.lavi.morphology.enums.EnumHarmony;
+import br.com.collei.lavi.morphology.enums.EnumPartsOfSpeech;
 
 /**
  * <p>Holds the basic attributes of any word in the Lavi language.</p>
@@ -10,6 +10,12 @@ import br.com.collei.lavi.morphology.EnumPartsOfSpeech;
  *
  */
 public class Term {
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	@SuppressWarnings("unused")
+	private static final long serialVersionUID = 98274998904169L;
 	
 	/**
 	 * <p>The String representation of the Term.</p>

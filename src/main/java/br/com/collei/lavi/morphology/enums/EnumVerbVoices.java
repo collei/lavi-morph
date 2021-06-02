@@ -1,35 +1,40 @@
-package br.com.collei.lavi.morphology;
+package br.com.collei.lavi.morphology.enums;
 
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.collei.lavi.morphology.filter.VerbConjugationFilter;
+import br.com.collei.lavi.morphology.enums.filter.VerbConjugationFilter;
 
 /**
- * <p>Enumerated verb modes.</p>
+ * <p>Enumerated verb voices.</p>
  * @author almir jr.
  *
  */
-public enum EnumVerbModes implements VerbConjugationFilter {
+public enum EnumVerbVoices implements VerbConjugationFilter {
 
-	FACTUAL(1,"FACTUAL"), DESIDERATIVE(2,"DESIDERATIVE"), IMPERATIVE(3,"IMPERATIVE");
+	ACTIVE(1,"ACTIVE"), MEDIAL(2,"MEDIAL"), PASSIVE(3,"PASSIVE");
+	
+	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
 	
 	/**
 	 * <p>numeric value of the type.</p>
 	 */
-	private int value;
+	private final int value;
 	
 	/**
 	 * <p>textual description of the type.</p>
 	 */
-	private String description;
+	private final String description;
 	
 	/**
 	 * <p>Creates a new type of this enumeration.</p>
 	 * @param value the numeric value of the type
 	 * @param description the textual description of the value
 	 */
-	EnumVerbModes(int value, String description) {
+	EnumVerbVoices(int value, String description) {
 		this.value = value;
 		this.description = description;
 	}
@@ -45,16 +50,17 @@ public enum EnumVerbModes implements VerbConjugationFilter {
 	/**
 	 * <p>gets the textual description of the type.</p>
 	 */
+	@Override
 	public String toString() {
 		return this.description;
-	}	
+	}
 	
 	/**
 	 * <p>Generates the list of the enumerated types.</p>
 	 * @return the list of all possible values
 	 */
-	public static List<EnumVerbModes> asList() {
-		return Arrays.asList(FACTUAL, DESIDERATIVE, IMPERATIVE);
+	public static List<EnumVerbVoices> asList() {
+		return Arrays.asList(ACTIVE, MEDIAL, PASSIVE);
 	}
 	
 }

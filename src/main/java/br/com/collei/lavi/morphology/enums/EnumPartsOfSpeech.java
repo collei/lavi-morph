@@ -1,4 +1,4 @@
-package br.com.collei.lavi.morphology;
+package br.com.collei.lavi.morphology.enums;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,19 +37,24 @@ public enum EnumPartsOfSpeech {
 	PHRASE(24,"PHRASE","phrase");
 	
 	/**
+	 * <p>Fix 'bad class file' issues</p>
+	 */
+	private static final long serialVersionUID = 98274998904169L;
+	
+	/**
 	 * <p>numeric value of the type.</p>
 	 */
-	private int value;
+	private final int value;
 	
 	/**
 	 * <p>textual description of the type.</p>
 	 */
-	private String description;
+	private final String description;
 	
 	/**
 	 * <p>abbreviated form of the textual description of the type.</p>
 	 */
-	private String abbreviation;
+	private final String abbreviation;
 	
 	/**
 	 * <p>Creates a new type of this enumeration.</p>
@@ -82,6 +87,7 @@ public enum EnumPartsOfSpeech {
 	/**
 	 * <p>gets the textual description of the type.</p>
 	 */
+	@Override
 	public String toString() {
 		return this.description;
 	}

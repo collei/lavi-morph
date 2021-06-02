@@ -1,12 +1,12 @@
-package br.com.collei.lavi.morphology.inflect;
+package br.com.collei.lavi.morphology.enums.inflect;
 
-import br.com.collei.lavi.morphology.EnumHarmony;
-import br.com.collei.lavi.morphology.EnumVerbDefiniteness;
-import br.com.collei.lavi.morphology.EnumVerbPersons;
-import br.com.collei.lavi.morphology.EnumVerbTenses;
-import br.com.collei.lavi.morphology.EnumVerbVoices;
-import br.com.collei.lavi.morphology.core.Term;
-import br.com.collei.lavi.morphology.core.Verb;
+import br.com.collei.lavi.morphology.enums.EnumHarmony;
+import br.com.collei.lavi.morphology.enums.EnumVerbDefiniteness;
+import br.com.collei.lavi.morphology.enums.EnumVerbPersons;
+import br.com.collei.lavi.morphology.enums.EnumVerbTenses;
+import br.com.collei.lavi.morphology.enums.EnumVerbVoices;
+import br.com.collei.lavi.morphology.enums.core.Term;
+import br.com.collei.lavi.morphology.enums.core.Verb;
 
 /**
  * <p>This class applies the rules for verb conjugation for every tense, voice, mode etc..</p>
