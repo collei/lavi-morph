@@ -44,17 +44,17 @@ public enum EnumPartsOfSpeech {
 	/**
 	 * <p>numeric value of the type.</p>
 	 */
-	private int value;
+	private final int value;
 	
 	/**
 	 * <p>textual description of the type.</p>
 	 */
-	private String description;
+	private final String description;
 	
 	/**
 	 * <p>abbreviated form of the textual description of the type.</p>
 	 */
-	private String abbreviation;
+	private final String abbreviation;
 	
 	/**
 	 * <p>Creates a new type of this enumeration.</p>

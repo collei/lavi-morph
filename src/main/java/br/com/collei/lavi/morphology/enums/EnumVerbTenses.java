@@ -22,12 +22,12 @@ public enum EnumVerbTenses implements VerbConjugationFilter {
 	/**
 	 * <p>numeric value of the type.</p>
 	 */
-	private int value;
+	private final int value;
 	
 	/**
 	 * <p>textual description of the type.</p>
 	 */
-	private String description;
+	private final String description;
 	
 	/**
 	 * <p>Creates a new type of this enumeration.</p>
