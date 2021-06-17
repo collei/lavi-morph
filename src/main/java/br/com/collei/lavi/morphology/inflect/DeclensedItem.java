@@ -1,11 +1,11 @@
-package br.com.collei.lavi.morphology.enums.inflect;
+package br.com.collei.lavi.morphology.inflect;
 
+import br.com.collei.lavi.morphology.Noun;
+import br.com.collei.lavi.morphology.Term;
 import br.com.collei.lavi.morphology.enums.EnumNounCases;
 import br.com.collei.lavi.morphology.enums.EnumNounPersons;
 import br.com.collei.lavi.morphology.enums.EnumNounPluralities;
-import br.com.collei.lavi.morphology.enums.core.Noun;
-import br.com.collei.lavi.morphology.enums.core.Term;
-import br.com.collei.lavi.morphology.enums.filter.NounDeclensionFilter;
+import br.com.collei.lavi.morphology.filter.NounDeclensionFilter;
 
 /**
  * <p>Holds the declensed item attributes.</p>

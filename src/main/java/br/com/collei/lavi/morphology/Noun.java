@@ -1,10 +1,10 @@
-package br.com.collei.lavi.morphology.enums.core;
+package br.com.collei.lavi.morphology;
 
 import br.com.collei.lavi.morphology.enums.EnumNounCases;
 import br.com.collei.lavi.morphology.enums.EnumNounPersons;
 import br.com.collei.lavi.morphology.enums.EnumNounPluralities;
 import br.com.collei.lavi.morphology.enums.EnumPartsOfSpeech;
-import br.com.collei.lavi.morphology.enums.inflect.Declensor;
+import br.com.collei.lavi.morphology.inflect.Declensor;
 
 /**
  * <p>Noun is a word that names a being in the world.</p>

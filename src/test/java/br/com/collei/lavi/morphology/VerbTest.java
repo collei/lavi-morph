@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import br.com.collei.lavi.morphology.enums.EnumHarmony;
-import br.com.collei.lavi.morphology.enums.core.Term;
-import br.com.collei.lavi.morphology.enums.core.Verb;
 
 public class VerbTest {
 	

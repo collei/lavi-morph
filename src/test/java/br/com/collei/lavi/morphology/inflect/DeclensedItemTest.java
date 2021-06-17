@@ -8,11 +8,10 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
+import br.com.collei.lavi.morphology.Noun;
 import br.com.collei.lavi.morphology.enums.EnumNounCases;
 import br.com.collei.lavi.morphology.enums.EnumNounPersons;
 import br.com.collei.lavi.morphology.enums.EnumNounPluralities;
-import br.com.collei.lavi.morphology.enums.core.Noun;
-import br.com.collei.lavi.morphology.enums.inflect.DeclensedItem;
 
 public class DeclensedItemTest {
 	

@@ -1,4 +1,4 @@
-package br.com.collei.lavi.morphology.enums.filter;
+package br.com.collei.lavi.morphology.filter;
 
 /**
  * <p>The filter for verb conjugation.</p>
