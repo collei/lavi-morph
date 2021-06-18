@@ -3,7 +3,7 @@ package br.com.collei.lavi.morphology.enums;
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.collei.lavi.morphology.enums.filter.VerbConjugationFilter;
+import br.com.collei.lavi.morphology.filter.VerbConjugationFilter;
 
 /**
  * <p>Enumerated verb modes.</p>

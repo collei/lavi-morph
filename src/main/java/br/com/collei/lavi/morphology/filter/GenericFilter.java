@@ -1,4 +1,4 @@
-package br.com.collei.lavi.morphology.enums.filter;
+package br.com.collei.lavi.morphology.filter;
 
 /**
  * <p>A generic filter, extended by NounDeclensionFilter and VerbConjugatedFilter.</p>

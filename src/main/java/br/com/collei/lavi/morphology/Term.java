@@ -1,4 +1,4 @@
-package br.com.collei.lavi.morphology.enums.core;
+package br.com.collei.lavi.morphology;
 
 import br.com.collei.lavi.morphology.enums.EnumHarmony;
 import br.com.collei.lavi.morphology.enums.EnumPartsOfSpeech;

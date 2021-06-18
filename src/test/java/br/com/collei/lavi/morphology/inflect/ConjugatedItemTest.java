@@ -8,13 +8,12 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
+import br.com.collei.lavi.morphology.Verb;
 import br.com.collei.lavi.morphology.enums.EnumVerbDefiniteness;
 import br.com.collei.lavi.morphology.enums.EnumVerbModes;
 import br.com.collei.lavi.morphology.enums.EnumVerbPersons;
 import br.com.collei.lavi.morphology.enums.EnumVerbTenses;
 import br.com.collei.lavi.morphology.enums.EnumVerbVoices;
-import br.com.collei.lavi.morphology.enums.core.Verb;
-import br.com.collei.lavi.morphology.enums.inflect.ConjugatedItem;
 
 public class ConjugatedItemTest {
 

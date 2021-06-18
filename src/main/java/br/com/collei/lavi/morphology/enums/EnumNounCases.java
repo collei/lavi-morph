@@ -3,7 +3,7 @@ package br.com.collei.lavi.morphology.enums;
 import java.util.Arrays;
 import java.util.List;
 
-import br.com.collei.lavi.morphology.enums.filter.NounDeclensionFilter;
+import br.com.collei.lavi.morphology.filter.NounDeclensionFilter;
 
 /**
  * <p>Enumerated noun cases.</p>

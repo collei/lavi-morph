@@ -1,4 +1,4 @@
-package br.com.collei.lavi.morphology.enums.core;
+package br.com.collei.lavi.morphology;
 
 import br.com.collei.lavi.morphology.enums.EnumHarmony;
 import br.com.collei.lavi.morphology.enums.EnumPartsOfSpeech;
@@ -7,7 +7,7 @@ import br.com.collei.lavi.morphology.enums.EnumVerbModes;
 import br.com.collei.lavi.morphology.enums.EnumVerbPersons;
 import br.com.collei.lavi.morphology.enums.EnumVerbTenses;
 import br.com.collei.lavi.morphology.enums.EnumVerbVoices;
-import br.com.collei.lavi.morphology.enums.inflect.Conjugator;
+import br.com.collei.lavi.morphology.inflect.Conjugator;
 
 /**
  * <p>Represents a verb, a word that indicates the attributes of an action related to the time and mode of the action, to the agent and, sometimes, the object.</p>

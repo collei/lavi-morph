@@ -1,4 +1,4 @@
-package br.com.collei.lavi.morphology.enums.filter;
+package br.com.collei.lavi.morphology.filter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,7 @@ public class FilterUtils {
 	/**
 	 * <p>Fix 'bad class file' issues</p>
 	 */
+	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 98274998904169L;
 
 	/**

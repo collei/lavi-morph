@@ -3,13 +3,13 @@ package br.com.collei.lavi.morphology.test.helpers;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.collei.lavi.morphology.Term;
+import br.com.collei.lavi.morphology.Verb;
 import br.com.collei.lavi.morphology.enums.EnumVerbDefiniteness;
 import br.com.collei.lavi.morphology.enums.EnumVerbModes;
 import br.com.collei.lavi.morphology.enums.EnumVerbPersons;
 import br.com.collei.lavi.morphology.enums.EnumVerbTenses;
 import br.com.collei.lavi.morphology.enums.EnumVerbVoices;
-import br.com.collei.lavi.morphology.enums.core.Term;
-import br.com.collei.lavi.morphology.enums.core.Verb;
 
 public class VerbTestList {
 	

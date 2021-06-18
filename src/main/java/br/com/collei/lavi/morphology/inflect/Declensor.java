@@ -1,10 +1,10 @@
-package br.com.collei.lavi.morphology.enums.inflect;
+package br.com.collei.lavi.morphology.inflect;
 
+import br.com.collei.lavi.morphology.Term;
 import br.com.collei.lavi.morphology.enums.EnumHarmony;
 import br.com.collei.lavi.morphology.enums.EnumNounCases;
 import br.com.collei.lavi.morphology.enums.EnumNounPersons;
 import br.com.collei.lavi.morphology.enums.EnumNounPluralities;
-import br.com.collei.lavi.morphology.enums.core.Term;
 
 /**
  * <p>This class applies the rules governing the noun declension process.</p>
